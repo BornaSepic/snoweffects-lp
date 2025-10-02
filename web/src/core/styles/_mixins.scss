@@ -1,0 +1,37 @@
+@use './mq' as mq;
+@use './unit' as u;
+
+@mixin onlyMobile($type: block) {
+  display: $type;
+
+  @include mq.min(medium) {
+    display: none;
+  }
+}
+
+@mixin baseButton {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  padding: u.elw-scale(10, 18);
+  outline: none;
+  border: none;
+  font-size: u.elw-scale(9, 14);
+  line-height: 1;
+}
+
+@mixin baseContainer($type: base) {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 u.elw-scale(15, 25);
+
+  @if $type == full {
+    max-width: u.$full-container-width;
+  } @else {
+    max-width: u.$base-container-width;
+  }
+}

@@ -1,0 +1,55 @@
+services:
+  devops:
+    build:
+      context: './'
+      dockerfile: 'devops/Dockerfile'
+      target: 'development'
+    volumes:
+      - './:/app:delegated'
+      - 'devops_tmp:/mnt/tmp'
+    env_file: './.env'
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  devops_cd:
+    build:
+      context: './'
+      dockerfile: 'devops/Dockerfile'
+      target: 'cd'
+    networks:
+      - 'cd'
+    volumes:
+      - './:/app:delegated'
+    command: ['/bin/bash', '-c', 'while true ; do wait ; done']
+
+  web:
+    build:
+      context: './web'
+      target: 'development'
+    volumes:
+      - './web:/app:delegated'
+      - 'web_tmp:/mnt/tmp'
+    ports:
+      - '2000:2000'
+      - '3000:3000'
+    env_file: './.env'
+    environment:
+      - 'PORT=2000'
+    command: ["/bin/bash"]
+    stdin_open: true
+    tty: true
+
+  web_ci:
+    build:
+      context: './web'
+      target: 'ci'
+    env_file: './.env'
+    command: ['/bin/bash', '-c', 'while true ; do wait ; done']
+
+networks:
+  cd:
+
+volumes:
+  devops_tmp:
+  web_tmp:

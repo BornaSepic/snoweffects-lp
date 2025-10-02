@@ -1,0 +1,61 @@
+name: "Deploy to release"
+
+on:
+  push:
+    branches:
+      - "devops/deploy-to-release"
+  workflow_dispatch:
+
+jobs:
+  deploy-to-release:
+    runs-on: "ubuntu-latest"
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        environment: ["primary"]
+    concurrency:
+      group: "deploy-to-release-${{ matrix.environment }}"
+      cancel-in-progress: true
+    env:
+      COMPOSE_DOCKER_CLI_BUILD: 1
+      COMPOSE_PROJECT_NAME: "deploy-to-release-${{ matrix.environment }}"
+      DOCKER_BUILDKIT: 1
+    steps:
+      - name: "Checkout everything"
+        uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: "Init git config"
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'bornasepic98@gmail.com'
+        # Workaround for No TTY issue
+        shell: 'script -qec "bash {0}"'
+
+      - name: "Build and start `devops_cd` container"
+        run: |
+          git fetch --all \
+            && touch .env \
+            && docker compose build \
+                --build-arg GROUP_ID=$(id -g) --build-arg USER_ID=$(id -u) \
+                --progress=plain devops_cd \
+            && docker compose up -d devops_cd
+        shell: 'script -qec "bash {0}"'
+
+      - name: "Deploy to release"
+        run: |
+          docker compose exec devops_cd ./docker-entrypoint.sh ./ci/deploy-to-release.sh \
+            && git push --all origin \
+            && echo 'Deployed to release successfully'
+        shell: 'script -qec "bash {0}"'
+
+      - name: "Shutdown containers"
+        run: |
+          docker compose ps \
+            && docker compose stop --timeout=30 \
+            && docker network inspect "${COMPOSE_PROJECT_NAME}_cd" \
+            && docker compose down
+        shell: 'script -qec "bash {0}"'

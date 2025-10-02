@@ -1,0 +1,19 @@
+@use './mq' as mq;
+
+.element {
+  @include mq.min(medium) {
+    color: red;
+  }
+
+  @include mq.min(large) {
+    color: green;
+  }
+
+  @include mq.min(largex) {
+    color: blue;
+  }
+
+  @include mq.min('largexx') {
+    color: cyan;
+  }
+}

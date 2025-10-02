@@ -1,0 +1,56 @@
+// Media Queries
+// ===============================================
+
+@use 'sass:math';
+@use '../stdlib/map' as map;
+
+@function -px-as-em($value) {
+  @return math.div($value, 16) * 1em;
+}
+
+$-breakpoints: (
+  // Smallest Android phone
+  'mobile-min': -px-as-em(360),
+  // Smallest iPhone
+  'mobile-target': -px-as-em(375),
+  // Large iPhone
+  'mobile-large': -px-as-em(390),
+  // Largest iPhone
+  'mobile-max': -px-as-em(430),
+  // iPad in landscape
+  'desktop-min': -px-as-em(1180),
+  // Desktop medium
+  'desktop-medium': -px-as-em(1400),
+  // Macbook
+  'desktop-target': -px-as-em(1512),
+  // Macbook Pro
+  'desktop-large': -px-as-em(1536),
+  // iMac
+  'desktop-max': -px-as-em(2048),
+  // Deprecated
+  'small': -px-as-em(480),
+  'medium': -px-as-em(768),
+  'regular': -px-as-em(1024),
+  'xregular': -px-as-em(1150),
+  'large': -px-as-em(1280),
+  'largexl': -px-as-em(1400),
+  'xlarge': -px-as-em(1440),
+  'xxlarge': -px-as-em(1536),
+  'xxxlarge': -px-as-em(1920)
+) !default;
+
+@mixin min($name) {
+  $width: map.get-strict($_breakpoints, $name);
+
+  @media (width >= #{$width}) {
+    @content;
+  }
+}
+
+@mixin max($name) {
+  $width: map.get-strict($-breakpoints, $name);
+
+  @media (width < #{$width}) {
+    @content;
+  }
+}

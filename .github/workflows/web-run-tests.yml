@@ -1,0 +1,113 @@
+name: 'Run Web Tests'
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: 'web-run-tests-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  web-run-tests:
+    runs-on: 'ubuntu-latest'
+    env:
+      COMPOSE_DOCKER_CLI_BUILD: 1
+      DOCKER_BUILDKIT: 1
+    steps:
+      - name: 'Checkout branch for PR event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'pull_request'
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Checkout branch for push event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'push'
+        with:
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Checkout branch for manual dispatch event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Init git config'
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'bornasepic98@gmail.com'
+        # Workaround for No TTY issue
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Start `web_ci` service'
+        run: |
+          cp -v ./.env.template ./.env
+          docker compose build web_ci && docker compose up --detach web_ci
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Lint filesystem'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run lint-filesystem'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Codeden'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run codegen'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Organize imports'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run organize-imports'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Prettify'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run prettify'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Save Codegen/Prettify changes'
+        run: |
+          ./devops/ci/copy-files-out-of-container.sh web_ci web \
+            && ./devops/ci/push-commits.sh 'Codegen + Prettify'
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Run unit tests'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run test'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Save test results'
+        run: |
+          ./devops/ci/copy-files-out-of-container.sh web_ci web \
+            && ./devops/ci/push-commits.sh 'Save test results'
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Run Typescript type checks'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run typecheck'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Detect circular dependencies'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run detect-circular-deps'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Run ESLint checks'
+        run: |
+          docker compose exec web_ci /bin/bash -c \
+            'bb run lint-strict --fix'
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Save ESLint fixes'
+        run: |
+          ./devops/ci/copy-files-out-of-container.sh web_ci web \
+            && ./devops/ci/push-commits.sh 'Lint fixes'
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Run style lint checks'
+        run: "docker compose exec web_ci /bin/bash -c 'bb run lint-styles'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Shutdown containers'
+        run: 'docker compose down'
+        shell: 'script -qec "bash {0}"'

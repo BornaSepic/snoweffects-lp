@@ -1,0 +1,23 @@
+lib
+lib-test
+lib-test/
+lib/
+.next
+.pnpm-store
+storybook-static
+/typescript
+
+# This project uses pnpm only
+yarn.lock
+package-lock.json
+
+# Dependency directories
+node_modules
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

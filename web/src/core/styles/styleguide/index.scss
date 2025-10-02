@@ -1,0 +1,15 @@
+@forward 'color' as color-*;
+@forward 'spacing' as spacing-*;
+@forward 'font' as font-*;
+@forward 'line-height' as line-height-*;
+@forward 'mq' as mq-*;
+@forward 'vw' as vw-*;
+
+// No prefix to ensure the function is available as sg.rem-calc()
+@forward 'unit';
+
+// No prefix to ensure the function is available as sg.vw-calc()
+@forward 'vw-calc';
+
+// No prefix to ensure the function is available as sg.element-invisible() and sg.element-invisible-off()
+@forward 'visibility';

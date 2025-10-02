@@ -1,0 +1,37 @@
+@use '../stdlib/map' as map;
+@use '../vw-calc-v3' as vw;
+
+$-screen-ranges: (
+  'mobile': (
+    min-screen-width: 360,
+    target-screen-width: 375
+  ),
+  'desktop': (
+    min-screen-width: 1180,
+    target-screen-width: 1512
+  ),
+  // Deprecated
+  'large': (
+      min-screen-width: 960,
+      target-screen-width: 1280
+    )
+) !default;
+
+/// vw-calc function with predefined screen ranges.
+///
+/// @example scss
+///   .xsmall { font-size: vw-calc(16 18 20, 'xsmall'); }
+///
+@function vw-calc($values, $screen-range) {
+  $range: map.get-strict($-screen-ranges, $screen-range);
+
+  $min-screen-width: map.get-strict($range, 'min-screen-width');
+  $target-screen-width: map.get-strict($range, 'target-screen-width');
+
+  @return vw.vw-calc(
+    $values: $values,
+    $min-screen-width: $min-screen-width,
+    $target-screen-width: $target-screen-width,
+    $root-rem-size: 16
+  );
+}

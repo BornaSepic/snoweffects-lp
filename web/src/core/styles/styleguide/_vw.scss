@@ -1,0 +1,24 @@
+@use '../stdlib/map' as map;
+@use './mq';
+@use './unit' as u;
+
+$-max-container-widths: (
+  'mobile': u.rem-calc(430),
+  'desktop': u.rem-calc(1512)
+) !default;
+
+@function get-container-width($screen-range) {
+  @return map.get-strict($-max-container-widths, $screen-range);
+}
+
+@function clamp-width-to-container($screen-range) {
+  @return min(100%, map.get-strict($-max-container-widths, $screen-range));
+}
+
+@mixin container-width() {
+  width: clamp-width-to-container('mobile');
+
+  @include mq.min('desktop-min') {
+    width: clamp-width-to-container('desktop');
+  }
+}

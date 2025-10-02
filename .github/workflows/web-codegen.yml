@@ -1,0 +1,69 @@
+name: 'Run Web Codegen'
+
+on:
+  push:
+    branches:
+      - main
+      - devops/codegen
+  workflow_dispatch:
+
+concurrency:
+  group: 'web-codegen-${{ github.ref }}'
+  cancel-in-progress: true
+
+jobs:
+  web-codegen:
+    runs-on: 'ubuntu-latest'
+    env:
+      COMPOSE_DOCKER_CLI_BUILD: 1
+      DOCKER_BUILDKIT: 1
+      NEXT_PUBLIC_DATOCMS_READONLY_TOKEN: ${{ secrets.NEXT_PUBLIC_DATOCMS_READONLY_TOKEN }}
+    steps:
+      - name: 'Checkout branch for PR event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'pull_request'
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Checkout branch for push event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'push'
+        with:
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Checkout branch for manual dispatch event'
+        uses: 'actions/checkout@v2'
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          token: ${{ secrets.CHECKOUT_ACTION_PAT }}
+
+      - name: 'Init git config'
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'bornasepic98@gmail.com'
+        # Workaround for No TTY issue
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Start `web_ci` service'
+        run: |
+          touch .env
+          printenv | grep '^NEXT_PUBLIC' >> .env
+          printenv | grep '^PRISMIC' >> .env
+          printenv | grep '^SHOPIFY' >> .env
+          docker compose build web_ci && docker compose up --detach web_ci
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Codeden'
+        run: "docker compose exec web_ci /bin/bash -c 'pnpm run codegen:full'"
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Save Codegen changes'
+        run: |
+          ./devops/ci/copy-files-out-of-container.sh web_ci web \
+            && ./devops/ci/push-commits.sh 'Codegen'
+        shell: 'script -qec "bash {0}"'
+
+      - name: 'Shutdown containers'
+        run: 'docker compose down'
+        shell: 'script -qec "bash {0}"'

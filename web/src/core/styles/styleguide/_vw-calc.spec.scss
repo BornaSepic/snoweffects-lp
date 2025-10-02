@@ -1,0 +1,20 @@
+@use './vw-calc' as vw with (
+  $-screen-ranges: (
+    'xsmall': (
+      min-screen-width: 320,
+      target-screen-width: 375
+    ),
+    'xlarge': (
+      min-screen-width: 1200,
+      target-screen-width: 1440
+    )
+  )
+);
+
+.xsmall {
+  font-size: vw.vw-calc(16 18 20, 'xsmall');
+}
+
+.xlarge {
+  font-size: vw.vw-calc(20 24 24, 'xlarge');
+}

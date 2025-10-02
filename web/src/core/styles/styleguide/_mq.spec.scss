@@ -1,0 +1,33 @@
+@use './mq' with (
+  $-breakpoints: (
+    'small': 30em,
+    'medium': 48em,
+    'large': 80em
+  )
+);
+
+.element {
+  @include mq.min(small) {
+    color: red;
+  }
+
+  @include mq.min(medium) {
+    color: green;
+  }
+
+  @include mq.min('large') {
+    color: blue;
+  }
+
+  @include mq.max(small) {
+    color: cyan;
+  }
+
+  @include mq.max(medium) {
+    color: magenta;
+  }
+
+  @include mq.max('large') {
+    color: yellow;
+  }
+}

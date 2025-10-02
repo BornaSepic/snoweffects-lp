@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./",
+    "checkJs": false,
+    "composite": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": ["es2022", "dom", "dom.iterable"],
+    "module": "esnext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "outDir": "lib",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2022",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "exclude": ["node_modules", ".next", "out", "storybook-static"],
+  "include": [
+    ".next/types/**/*.ts",
+    ".storybook/*.js",
+    ".storybook/*.ts",
+    "bin/**/*.cjs",
+    "datocms/src/**/*.ts",
+    "devops/**/*",
+    "eslint-strict.config.mjs",
+    "eslint.config.mjs",
+    "graphql-api-versions.js",
+    "graphql.config.js",
+    "next-env.d.ts",
+    "next.config.mjs",
+    "next.redirects.mjs",
+    "src/**/*.js",
+    "src/**/*.json",
+    "src/**/*.jsx",
+    "src/**/*.mjs",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ]
+}

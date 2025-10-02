@@ -1,0 +1,10 @@
+.dockerignore
+.editorconfig
+.git
+.gitignore
+Dockerfile
+lib
+lib-test
+node_modules
+npm-debug.log
+README.md

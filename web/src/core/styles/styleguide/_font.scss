@@ -1,0 +1,54 @@
+// Fonts
+// ===============================================
+
+@use 'sass:list';
+@use '../stdlib/map' as map;
+@use './unit' as u;
+
+// Font Size
+
+$-font-sizes: (
+  'xxlarge': u.rem-calc(104),
+  'xlarge': u.rem-calc(80),
+  'large': u.rem-calc(44),
+  'intermediate': u.rem-calc(32),
+  'medium': u.rem-calc(24),
+  'regular': u.rem-calc(18),
+  'sm-regular': u.rem-calc(16),
+  'small': u.rem-calc(14),
+  'xsmall': u.rem-calc(12),
+  'xxsmall': u.rem-calc(10),
+  'xxxsmall': u.rem-calc(9)
+);
+
+@function size($font-size) {
+  @return map.get-strict($-font-sizes, $font-size);
+}
+
+// Font Family
+
+$-system-font-stack: (system-ui, sans-serif, 'Apple Color Emoji');
+
+$-font-families: (
+  'regular': 'Beausite',
+  'heading': 'PPEditorialNew'
+);
+
+@function family($name) {
+  @return list.join(
+    map.get-strict($-font-families, $name),
+    $-system-font-stack
+  );
+}
+
+// Font Weight
+
+$-font-weights: (
+  'light': 300,
+  'regular': 400,
+  'bold': 700
+);
+
+@function weight($weight) {
+  @return map.get-strict($-font-weights, $weight);
+}

@@ -1,0 +1,3 @@
+*.module.scss.d.ts
+/lib-test
+/public

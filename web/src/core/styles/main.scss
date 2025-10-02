@@ -1,0 +1,79 @@
+@use 'colors' as colors;
+@use 'unit' as u;
+@use 'typography' as t;
+
+@use '../../../node_modules/@csstools/normalize.css/normalize';
+
+$-system-font-stack:
+  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, 'Helvetica Neue', sans-serif;
+
+$body-font-family: 'Beausite', $-system-font-stack;
+
+// Box sizing reset
+:root {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+@font-face {
+  font-family: 'TWK Everett';
+  src:
+    url('/assets/fonts/twkeverett/TWKEverett-Regular-web.woff2') format('woff2'),
+    url('/assets/fonts/twkeverett/TWKEverett-Regular-web.woff') format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'TWK Everett';
+  src:
+    url('/assets/fonts/twkeverett/TWKEverett-Medium-web.woff2') format('woff2'),
+    url('/assets/fonts/twkeverett/TWKEverett-Medium-web.woff') format('woff');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'TWK Everett';
+  src:
+    url('/assets/fonts/twkeverett/TWKEverett-Extrabold-web.woff2')
+      format('woff2'),
+    url('/assets/fonts/twkeverett/TWKEverett-Extrabold-web.woff') format('woff');
+  font-weight: 750;
+}
+
+body {
+  margin: 0;
+  font-family: $body-font-family;
+  color: colors.$black;
+
+  &.is-frozen {
+    overflow: hidden;
+  }
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+  transition-timing-function: linear !important;
+  position: relative;
+  user-select: none;
+  -webkit-touch-callout: none;
+  backface-visibility: hidden;
+}
+
+button {
+  font-family: inherit;
+}

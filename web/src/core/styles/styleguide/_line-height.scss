@@ -1,0 +1,16 @@
+// Line Heights
+// ===============================================
+
+@use '../stdlib/map' as map;
+
+$_line-heights: (
+  'xlarge': 1.4,
+  'large': 1.3,
+  'medium': 1.1,
+  'regular': 1,
+  'small': 0.95
+);
+
+@function get($line-height) {
+  @return map.get-strict($_line-heights, $line-height);
+}

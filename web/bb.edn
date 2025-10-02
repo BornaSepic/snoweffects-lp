@@ -1,0 +1,77 @@
+{:min-bb-version "1.3.190",
+ :tasks
+ {:enter (binding [*out* *err*]
+           (do (println "[BB] Task started:" (:name (current-task)))
+               (if (:doc (current-task))
+                 (println "     --" (:doc (current-task))))
+               (if *command-line-args*
+                 (println "[BB] Task arguments:" *command-line-args*)))),
+  :leave (binding [*out* *err*]
+           (do (println "[BB] Task finished:" (:name (current-task))))),
+  build {:doc "Build project", :task (shell "pnpm run build")},
+  ci {:doc "Run all CI checks",
+      :task (binding [*command-line-args* []]
+              (do (run 'lint-filesystem)
+                  (run 'codegen)
+                  (run 'organize-imports)
+                  (run 'prettify)
+                  (run 'typecheck)
+                  (run 'test)
+                  (binding [*command-line-args* ["--fix"]] (run 'lint-strict))
+                  (run 'detect-circular-deps)))},
+  codegen {:depends [devops-prepare],
+           :doc "Run quick codegen tasks",
+           :task (do (run 'codegen-typed-css-modules))},
+  codegen-full {:depends [devops-prepare],
+                :doc "Run all codegen tasks",
+                :task (shell "./bin/codegen/generate-all.sh")},
+  codegen-typed-css-modules
+  {:depends [devops-prepare],
+   :doc "Generate type definitions for CSS Modules",
+   :task (shell "./bin/codegen/generate-typed-css-modules.sh")},
+  compile-ts {:doc "Compile TypeScript files",
+              :task (shell "./bin/compile-ts.sh")},
+  detect-circular-deps {:depends [devops-prepare],
+                        :doc "Detect circular dependencies in JS/TS code",
+                        :task (do (shell
+                                   "./devops/detect-all-circular-deps.sh"))},
+  dev {:doc "Run Next.js in dev mode",
+       :task (do (shell "./bin/prebuild.sh") (shell "./dev.sh"))},
+  devops-prepare {:doc "Run preparation tasks for devops",
+                  :task (shell "./bin/predevops.sh")},
+  find-client-components {:doc "List React client components",
+                          :task (shell "./devops/find-client-components.sh")},
+  lint {:doc "Lint JS/TS files", :task (shell "./bin/lint.sh")},
+  lint-filesystem {:depends [devops-prepare],
+                   :doc "Ensure filenames match naming convention",
+                   :task (shell "./devops/lint-filesystem.sh")},
+  lint-strict
+  {:doc "Lint the code with strict rules",
+   :task (do (apply shell
+                    "eslint"
+                    "--report-unused-disable-directives-severity=warn"
+                    "--report-unused-inline-configs=warn"
+                    "--config=./eslint-strict.config.mjs" *command-line-args*)
+             ; Avoid passing command-line-args to prettify
+             (binding [*command-line-args* []] (run 'prettify)))},
+  lint-styles {:doc "Lint stylesheets", :task (shell "./bin/lint-styles.sh")},
+  organize-imports {:doc "Sort imports in TS/JS files",
+                    :task (do (shell "fix-verbatim-module-syntax"
+                                     "./tsconfig.json")
+                              (shell "biome"
+                                     "check" "--write"
+                                     "--formatter-enabled=false"
+                                     "--organize-imports-enabled=true"))},
+  prettify {:doc "Format files with Prettier",
+            :task (apply shell "./bin/prettify.sh" *command-line-args*)},
+  start {:depends [build],
+         :doc "Start project in production mode",
+         :task (shell "./bin/start.sh")},
+  test {:doc "Run unit test suite",
+        :task (do (shell "./bin/pretest.sh")
+                  (apply shell
+                         {:extra-env {"NODE_ENV" "test"}}
+                         "ava"
+                         *command-line-args*))},
+  typecheck {:doc "Check files with Typescript",
+             :task (shell "tsc" "--noEmit")}}}
