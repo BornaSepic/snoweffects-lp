@@ -7,25 +7,11 @@
 @use '../stdlib/map' as map;
 
 $_colors: (
-  'pink': oklch(78.68% 0.1274 329.47),
-  'cherry': oklch(52.39% 0.17 356.08),
-  'blue': oklch(78.67% 0.0668 181.28),
-  'purple': oklch(78.06% 0.1089 326.02),
+  'brown': oklch(0.5453 0.2034 28.33),
   'white': oklch(100% 0 0),
-  'white-10': oklch(100% 0 0 / 10%),
-  'white-20': oklch(100% 0 0 / 20%),
-  'white-30': oklch(100% 0 0 / 30%),
-  'black': oklch(0% 0 0),
-  'black-20': oklch(0% 0 0 / 20%),
-  'text': oklch(0% 0 0),
-  'gray-50': oklch(59.65% 0 0),
-  'gray-40': oklch(68.3% 0 0),
-  'gray-20': oklch(84.52% 0 0),
-  'gray': oklch(51.03% 0 0),
-  'error': oklch(58.69% 0.165 23.72),
-  'success': oklch(59.8% 0.13 143.74),
-  'border': oklch(0% 0 0),
-  'background': oklch(77.22% 0.0568 301.46)
+  'black': oklch(0.3829 0 0),
+  'green': oklch(0.5435 0.0759 169),
+  'snow': oklch(0.9559 0.0109 274.89)
 );
 
 @function get($color) {

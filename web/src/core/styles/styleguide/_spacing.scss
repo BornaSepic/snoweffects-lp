@@ -5,11 +5,10 @@
 @use '../unit' as u;
 
 $_spacings: (
-  'xxlarge': u.rem-calc(144),
-  'xlarge': u.rem-calc(88),
-  'large': u.rem-calc(64),
-  'medium': u.rem-calc(40),
-  'regular': u.rem-calc(24),
+  'xxxxlarge': u.rem-calc(96),
+  'xxlarge': u.rem-calc(64),
+  'large': u.rem-calc(32),
+  'regular': u.rem-calc(16),
   'small': u.rem-calc(16),
   'xsmall': u.rem-calc(12),
   'xxsmall': u.rem-calc(8),

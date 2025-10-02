@@ -3,5 +3,81 @@
 @use 'mq' as mq;
 
 .Footer {
- 
+  background-color: styleguide.color-get('black');
+  padding: styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');
+
+  @include styleguide.mq-min('desktop-min') {
+    padding: styleguide.spacing-get('xxxxlarge') styleguide.spacing-get('xxlarge');
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    gap: styleguide.rem-calc(48);
+
+
+    @include styleguide.mq-min('desktop-min') {
+      gap: styleguide.rem-calc(100);
+      flex-flow: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+
+    flex-flow: column;
+    gap: styleguide.spacing-get('large');
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    text-align: center;
+
+    @include styleguide.mq-min('desktop-min') {
+      text-align: left;
+      flex-flow: row;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-flow: column;
+      gap: styleguide.spacing-get('xsmall');
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      line-height: 120%;
+      color: styleguide.color-get('white');
+      font-weight: 300;
+      font-size: styleguide.font-size('regular');
+
+      @include styleguide.mq-min('desktop-min') {
+        font-size: styleguide.font-size('medium');
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: styleguide.color-get('white');
+      font-weight: 300;
+      font-size: inherit;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &__title {
+      font-size: styleguide.font-size('medium') !important;
+      color: styleguide.color-get('white');
+      opacity: .5;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
 }
