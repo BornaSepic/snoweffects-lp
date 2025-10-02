@@ -1,0 +1,74 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.LogoCarousel {
+  background-color: styleguide.color-get('white');
+
+  @include styleguide.mq-min('desktop-min') {
+    padding: styleguide.spacing-get('xxxxlarge') 0;
+    margin-bottom: styleguide.spacing-get('xxlarge');
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: styleguide.spacing-get('xlarge');
+    padding: styleguide.spacing-get('xxlarge') 0;
+
+    @include styleguide.mq-min('desktop-min') {
+      gap: styleguide.spacing-get('large');
+    }
+
+    h2 {
+      margin: 0;
+      color: styleguide.color-get('brown');
+      text-transform: uppercase;
+      font-size: styleguide.font-size('medium');
+      text-align: center;
+    }
+  }
+
+
+  &__logos {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: styleguide.spacing-get('large');
+    min-width: 100%;
+
+    @include styleguide.mq-min('desktop-min') {
+      gap: styleguide.spacing-get('xxlarge');
+    }
+
+
+    &__container {
+      max-width: 100vw;
+      display: flex;
+      overflow: hidden;
+      flex-flow: column;
+      user-select: none;
+      gap: styleguide.spacing-get('large');
+    }
+
+    &__wrapper {
+      display: flex;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:first-of-type {
+      margin-left: styleguide.spacing-get('large');
+
+
+      @include styleguide.mq-min('desktop-min') {
+        margin-left: styleguide.spacing-get('xxlarge');
+      }
+    }
+  }
+}
