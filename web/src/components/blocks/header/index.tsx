@@ -1,10 +1,6 @@
 import { type FC } from 'react'
 
-type Props = {
-}
-
-export const Header: FC<Props> = async ({
-}) => {
+export const Header: FC = async () => {
   return (
     <header>
     </header>

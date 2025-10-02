@@ -1,0 +1,108 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.Cta {
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  box-shadow: 0px 0px 0px 2px styleguide.color-get('brown');
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: styleguide.spacing-get('medium') styleguide.spacing-get('xlarge');
+  border-radius: 8px;
+
+  &--primary {
+    background-color: styleguide.color-get('brown');
+    border-color: styleguide.color-get('brown');
+  }
+
+  &--secondary {
+    background-color: styleguide.color-get('white');
+    border-color: styleguide.color-get('black');
+  }
+
+  &__hoverContent {
+    box-shadow: 0px 0px 0px 2px styleguide.color-get('brown');
+    border-radius: 8px;
+    background-color: styleguide.color-get('white');
+    color: styleguide.color-get('black');
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-clip-path: var(--clip);
+    clip-path: var(--clip);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transition: -webkit-clip-path 0.25s ease, clip-path 0.25s ease;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    &[data-index='1'] {
+      --clip: inset(0 0 100% 0);
+    }
+
+    &[data-index='2'] {
+      --clip: inset(0 0 0 100%);
+    }
+
+    &[data-index='3'] {
+      --clip: inset(100% 0 0 0);
+    }
+
+    &[data-index='4'] {
+      --clip: inset(0 100% 0 0);
+    }
+  }
+
+  &__hoverHelper {
+    -webkit-clip-path: var(--clip);
+    clip-path: var(--clip);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    top: 0;
+    border: 0;
+
+    &[data-index='1'] {
+      --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%);
+    }
+
+    &[data-index='2'] {
+      --clip: polygon(100% 0, 100% 100%, 50% 50%);
+    }
+
+    &[data-index='3'] {
+      --clip: polygon(0 100%, 100% 100%, 50% 50%);
+    }
+
+    &[data-index='4'] {
+      --clip: polygon(0 0, 0 100%, 50% 50%);
+    }
+  }
+
+  .Cta__hoverHelper[data-index='1']:hover,
+  .Cta__hoverHelper[data-index='2']:hover,
+  .Cta__hoverHelper[data-index='3']:hover,
+  .Cta__hoverHelper[data-index='4']:hover {
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+  }
+
+  .Cta__hoverHelper[data-index='1']:hover~.Cta__hoverContent[data-index='1'],
+  .Cta__hoverHelper[data-index='2']:hover~.Cta__hoverContent[data-index='2'],
+  .Cta__hoverHelper[data-index='3']:hover~.Cta__hoverContent[data-index='3'],
+  .Cta__hoverHelper[data-index='4']:hover~.Cta__hoverContent[data-index='4'] {
+    --clip: inset(0 0 0 0);
+    z-index: 0;
+  }
+
+}
