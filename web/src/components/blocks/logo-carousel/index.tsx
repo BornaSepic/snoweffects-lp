@@ -8,6 +8,7 @@ import { Swiper as SwiperType } from 'swiper/types'
 import 'swiper/css'
 import style from './style.module.scss'
 import { gsap } from '../../../core/animation/gsap'
+import clsx from 'clsx'
 
 export const LogoCarousel: FC = () => {
   const DATA = {
@@ -69,7 +70,7 @@ export const LogoCarousel: FC = () => {
         {
           xPercent: 0,
           repeat: -1,
-          duration: rightSlidesRef.current.length * 10,
+          duration: rightSlidesRef.current.length * 20,
           ease: 'none'
         }
       )
@@ -84,7 +85,7 @@ export const LogoCarousel: FC = () => {
         {
           xPercent: -100,
           repeat: -1,
-          duration: leftSlidesRef.current.length * 10,
+          duration: leftSlidesRef.current.length * 20,
           ease: 'none'
         }
       )
@@ -137,7 +138,12 @@ export const LogoCarousel: FC = () => {
               )
             })}
           </div>
-          <div className={style.LogoCarousel__logos__wrapper}>
+          <div
+            className={clsx(
+              style.LogoCarousel__logos__wrapper,
+              style['LogoCarousel__logos__wrapper--reverse']
+            )}
+          >
             {[duplicatedLogos, duplicatedLogos].map((logos, index) => {
               return (
                 <div

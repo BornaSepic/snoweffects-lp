@@ -3,10 +3,11 @@
 @use 'mq' as mq;
 
 .LogoCarousel {
+  overflow: hidden;
   background-color: styleguide.color-get('white');
 
   @include styleguide.mq-min('desktop-min') {
-    padding: styleguide.spacing-get('xxxxlarge') 0;
+    padding: styleguide.spacing-get('xlarge') 0 0 0;
     margin-bottom: styleguide.spacing-get('xxlarge');
   }
 
@@ -15,7 +16,7 @@
     flex-flow: column;
     align-items: center;
     gap: styleguide.spacing-get('xlarge');
-    padding: styleguide.spacing-get('xxlarge') 0;
+    padding-bottom: styleguide.spacing-get('xxlarge');
 
     @include styleguide.mq-min('desktop-min') {
       gap: styleguide.spacing-get('large');
@@ -23,6 +24,7 @@
 
     h2 {
       margin: 0;
+      font-weight: 500;
       color: styleguide.color-get('brown');
       text-transform: uppercase;
       font-size: styleguide.font-size('medium');
@@ -54,6 +56,14 @@
 
     &__wrapper {
       display: flex;
+
+      &--reverse {
+        display: flex;
+
+        @include styleguide.mq-min('desktop-min') {
+          display: none;
+        }
+      }
     }
   }
 

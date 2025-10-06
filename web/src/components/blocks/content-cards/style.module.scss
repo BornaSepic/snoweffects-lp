@@ -1,0 +1,179 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.ContentCards {
+  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge');
+
+  @include styleguide.mq-min('desktop-min') {
+    padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: styleguide.spacing-get('large');
+    padding: 0 0 styleguide.spacing-get('large') 0;
+
+    @include styleguide.mq-min('desktop-min') {
+      flex-flow: row;
+      padding: 0 0 styleguide.spacing-get('xxxxlarge') 0;
+    }
+
+    &--center {
+      @include styleguide.mq-min('desktop-min') {
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+
+    &__left {
+      max-width: styleguide.rem-calc(650);
+    }
+
+    &__subtitle {
+      font-size: styleguide.font-size('medium');
+      line-height: 1.2;
+      color: styleguide.color-get('green');
+    }
+
+    &__title {
+      font-weight: 400;
+      font-size: styleguide.font-size('xxlarge');
+      margin: 0 0 styleguide.spacing-get('medium') 0;
+      line-height: 1.1;
+
+      @include styleguide.mq-min('desktop-min') {
+        font-size: styleguide.font-size('xxxlarge');
+        margin: 0 0 styleguide.spacing-get('regular') 0;
+      }
+    }
+
+    &__description {
+      margin: 0;
+      line-height: 1.4;
+      font-weight: 350;
+      font-size: styleguide.font-size('regular');
+
+      @include styleguide.mq-min('desktop-min') {
+        font-size: styleguide.font-size('medium');
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-flow: column;
+      gap: styleguide.spacing-get('large');
+      justify-content: space-between;
+      max-width: styleguide.rem-calc(428);
+      width: 100%;
+
+      &__title {
+        font-size: styleguide.font-size('regular');
+        margin: 0 0 styleguide.spacing-get('small') 0;
+        line-height: 1.2;
+        font-weight: 500;
+
+        @include styleguide.mq-min('desktop-min') {
+          font-size: styleguide.font-size('medium');
+        }
+      }
+
+      &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: column;
+        gap: styleguide.spacing-get('xxsmall');
+
+        &__item {
+          display: flex;
+          align-items: center;
+          gap: styleguide.spacing-get('xxsmall');
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: styleguide.spacing-get('xsmall');
+
+    @include styleguide.mq-min('desktop-min') {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__card {
+    position: relative;
+    aspect-ratio: 1.35;
+
+    &__image {
+      border-radius: 8px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.5) 100%);
+
+      }
+    }
+
+    &__content {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: styleguide.spacing-get('regular');
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: styleguide.spacing-get('regular');
+
+      @include styleguide.mq-min('desktop-min') {
+        padding: styleguide.spacing-get('large');
+      }
+
+      a {
+        width: auto;
+        --top-padding: 14px;
+        --side-padding: 32px;
+      }
+
+      &__title {
+        font-weight: 400;
+        margin: 0;
+        color: styleguide.color-get('white');
+        font-size: styleguide.font-size('large');
+
+        @include styleguide.mq-min('desktop-min') {
+          font-size: styleguide.font-size('xlarge');
+        }
+      }
+    }
+  }
+}

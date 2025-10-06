@@ -5,7 +5,8 @@ export type Styles = {
   "LogoCarousel__logo": "LogoCarousel__logo",
   "LogoCarousel__logos": "LogoCarousel__logos",
   "LogoCarousel__logos__container": "LogoCarousel__logos__container",
-  "LogoCarousel__logos__wrapper": "LogoCarousel__logos__wrapper"
+  "LogoCarousel__logos__wrapper": "LogoCarousel__logos__wrapper",
+  "LogoCarousel__logos__wrapper--reverse": "LogoCarousel__logos__wrapper--reverse"
 }
 
 export type ClassNames = keyof Styles

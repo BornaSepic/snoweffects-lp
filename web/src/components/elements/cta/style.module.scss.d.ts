@@ -1,6 +1,8 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
 export type Styles = {
   "--clip": "--clip",
+  "--side-padding": "--side-padding",
+  "--top-padding": "--top-padding",
   "Cta": "Cta",
   "Cta--primary": "Cta--primary",
   "Cta--secondary": "Cta--secondary",
