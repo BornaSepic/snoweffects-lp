@@ -15,11 +15,40 @@ export const Home: FC<Props> = ({ data }) => {
   return (
     <>
       <Main>
-        <Hero />
+        <Hero
+          title={
+            <>
+              Bring the Magic of Snow Indoors <br />
+              (and Out!)-<i>Without the Cold</i>
+            </>
+          }
+          subtitle={'REALISTIC SNOW SCENES FOR HOLIDAYS, PARTIES, AND SEASONAL DISPLAYS'}
+          phoneCta={{
+            label: 'Call Us',
+            desktopLabel: <>Call Us  <b>440-468-7669</b></>,
+            href: 'tel:4404687669'
+          }}
+          ctas={[
+            { label: 'Shop Snow Kits', href: '/' },
+            { label: 'See Real Setups', desktopLabel: 'See Real Customer Setups', href: '/' }
+          ]}
+          desktopImage={{
+            src: '/images/hero-desktop.jpg',
+            alt: 'Hero Desktop Image',
+            width: 1440,
+            height: 900
+          }}
+          mobileImage={{
+            src: '/images/hero-mobile.png',
+            alt: 'Hero Mobile Image',
+            width: 768,
+            height: 1024
+          }}
+        />
         <ContentCards
           title={
             <>
-              Real Projects from <br /> Real Customers
+              Real Projects from <br /> <i>Real Customers</i>
             </>
           }
           subtitle={'UNFORGETTABLE SCENES'}
@@ -75,27 +104,36 @@ export const Home: FC<Props> = ({ data }) => {
           ]}
         />
         <FAQ
-          title={<>Common Questions, <br /> <i>Answered</i></>}
+          title={
+            <>
+              Common Questions, <br /> <i>Answered</i>
+            </>
+          }
           questions={[
             {
               question: 'Is it safe for kids and pets?',
-              answer: 'Absolutely! Our snow products are non-toxic and safe for children and pets when used as directed.'
+              answer:
+                'Absolutely! Our snow products are non-toxic and safe for children and pets when used as directed.'
             },
             {
               question: 'How much do I need?',
-              answer: 'One 22 lb bag of SnowScape covers ~75 sq ft at 1 inch thick.'
+              answer:
+                'One 22 lb bag of SnowScape covers ~75 sq ft at 1 inch thick.'
             },
             {
               question: 'Does it hold up in wind/rain?',
-              answer: 'Yes! Our snow products are designed to withstand various weather conditions, including wind and rain.'
+              answer:
+                'Yes! Our snow products are designed to withstand various weather conditions, including wind and rain.'
             },
             {
               question: 'How do I clean it up?',
-              answer: 'Our snow products are easy to clean up. Simply sweep or vacuum the area, and any remaining residue can be washed away with water.'
+              answer:
+                'Our snow products are easy to clean up. Simply sweep or vacuum the area, and any remaining residue can be washed away with water.'
             },
             {
               question: 'Can I use it on wood/tile/stage?',
-              answer: 'Yes! Our snow products are safe for use on various surfaces, including wood, tile, and stages.'
+              answer:
+                'Yes! Our snow products are safe for use on various surfaces, including wood, tile, and stages.'
             }
           ]}
         />

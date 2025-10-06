@@ -13,7 +13,11 @@
   text-decoration: none;
   text-transform: uppercase;
   padding: var(--top-padding, styleguide.spacing-get('medium')) var(--side-padding, styleguide.spacing-get('xlarge'));
-  border-radius: 8px;
+  border-radius: 4px;
+
+  @include styleguide.mq-min('desktop-min') {
+    border-radius: 8px;
+  }
 
   &--primary {
     background-color: styleguide.color-get('brown');

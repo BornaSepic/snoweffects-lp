@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import style from './style.module.scss'
 
 export type Props = {
-  label: string
+  label: string | React.ReactNode
   link?: string
   onClick?: () => void
   mode?: 'primary' | 'secondary'

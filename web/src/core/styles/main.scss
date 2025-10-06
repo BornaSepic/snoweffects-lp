@@ -1,6 +1,7 @@
 @use 'colors' as colors;
 @use 'unit' as u;
 @use 'typography' as t;
+@use 'styleguide' as styleguide;
 
 @use '../../../node_modules/@csstools/normalize.css/normalize';
 
@@ -77,4 +78,18 @@ body {
 button {
   font-family: inherit;
   color: inherit;
+}
+
+.hide-desktop {
+  @include styleguide.mq-min('desktop-min') {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+.hide-mobile {
+  @include styleguide.mq-max('desktop-min') {
+    display: none !important;
+    visibility: hidden !important;
+  }
 }

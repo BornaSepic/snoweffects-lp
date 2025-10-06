@@ -1,0 +1,169 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.Hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');
+
+  @include styleguide.mq-min('desktop-min') {
+    padding: styleguide.spacing-get('xxlarge');
+  }
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include styleguide.mq-max('desktop-min') {
+      &>svg {
+        max-height: 80px;
+        width: auto;
+      }
+    }
+
+    &__cta {
+      &__desktop {
+        display: none;
+        visibility: hidden;
+        text-decoration: none;
+        cursor: pointer;
+        color: styleguide.color-get('white');
+        font-size: styleguide.font-size('xlarge');
+
+        @include styleguide.mq-min('desktop-min') {
+          display: block;
+          visibility: visible;
+        }
+      }
+
+      &__mobile {
+        text-transform: uppercase;
+        display: flex;
+        visibility: visible;
+        gap: styleguide.spacing-get('xxxsmall');
+        text-decoration: none;
+        border-radius: 4px;
+        background-color: styleguide.color-get('white');
+        padding: styleguide.spacing-get('xsmall') styleguide.spacing-get('regular');
+
+        @include styleguide.mq-min('desktop-min') {
+          display: none;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    gap: styleguide.spacing-get('large');
+    color: styleguide.color-get('white');
+
+    h1 {
+      margin: 0;
+      line-height: 1.2;
+      font-size: styleguide.font-size('regular');
+      font-weight: 500;
+
+      @include styleguide.mq-min('desktop-min') {
+        font-size: styleguide.font-size('medium');
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      margin: styleguide.spacing-get('regular') 0 0;
+      font-size: styleguide.font-size('xxlarge');
+
+      @include styleguide.mq-min('desktop-min') {
+        margin: styleguide.spacing-get('medium') 0 0;
+        font-size: styleguide.font-size('xxxlarge');
+      }
+    }
+
+    &__ctas {
+      display: flex;
+      align-items: center;
+      gap: styleguide.spacing-get('regular');
+
+      a {
+        flex-basis: max-content;
+
+        @include styleguide.mq-max('desktop-min') {
+          display: block;
+          visibility: visible;
+          flex-grow: 1;
+
+          --top-padding: 14px;
+          --side-padding: 0;
+        }
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(252.85deg, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__desktop {
+      display: none;
+      visibility: hidden;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      @include styleguide.mq-min('desktop-min') {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    &__mobile {
+      display: block;
+      visibility: visible;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+
+      @include styleguide.mq-min('desktop-min') {
+        display: none;
+        visibility: hidden;
+      }
+    }
+  }
+}

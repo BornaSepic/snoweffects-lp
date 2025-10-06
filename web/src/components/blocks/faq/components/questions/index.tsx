@@ -18,10 +18,9 @@ export const FAQQuestions: FC<Props> = ({ questions }) => {
   return (
     <div className={style.FAQ__content}>
       {questions.map((q, index) => (
-        <div className={style.FAQ__content__item}>
+        <div className={style.FAQ__content__item} key={`faq-question-${index}`}>
           <button
             aria-expanded={expandedIndex === index ? 'true' : 'false'}
-            key={index}
             className={style.FAQ__question}
             onClick={() =>
               setExpandedIndex(expandedIndex === index ? null : index)
