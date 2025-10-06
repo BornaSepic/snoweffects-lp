@@ -3,7 +3,7 @@
 @use 'mq' as mq;
 
 .ContentCards {
-  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge');
+  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
 
   @include styleguide.mq-min('desktop-min') {
     padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');

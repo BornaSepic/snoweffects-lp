@@ -5,6 +5,7 @@ import { Hero } from '../../components/blocks/hero'
 import { FooterCard } from '../../components/blocks/footer-card'
 import { LogoCarousel } from '../../components/blocks/logo-carousel'
 import { ContentCards } from '../../components/blocks/content-cards'
+import { FAQ } from '../../components/blocks/faq'
 
 type Props = {
   data: GetHomepageQuery
@@ -70,6 +71,31 @@ export const Home: FC<Props> = ({ data }) => {
               },
               ctaLink: '#',
               ctaLabel: 'View Kit'
+            }
+          ]}
+        />
+        <FAQ
+          title={<>Common Questions, <br /> <i>Answered</i></>}
+          questions={[
+            {
+              question: 'Is it safe for kids and pets?',
+              answer: 'Absolutely! Our snow products are non-toxic and safe for children and pets when used as directed.'
+            },
+            {
+              question: 'How much do I need?',
+              answer: 'One 22 lb bag of SnowScape covers ~75 sq ft at 1 inch thick.'
+            },
+            {
+              question: 'Does it hold up in wind/rain?',
+              answer: 'Yes! Our snow products are designed to withstand various weather conditions, including wind and rain.'
+            },
+            {
+              question: 'How do I clean it up?',
+              answer: 'Our snow products are easy to clean up. Simply sweep or vacuum the area, and any remaining residue can be washed away with water.'
+            },
+            {
+              question: 'Can I use it on wood/tile/stage?',
+              answer: 'Yes! Our snow products are safe for use on various surfaces, including wood, tile, and stages.'
             }
           ]}
         />

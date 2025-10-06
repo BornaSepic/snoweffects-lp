@@ -4,7 +4,7 @@
 
 .FooterCard {
   background-color: styleguide.color-get('black');
-  padding: 0 styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge');
+  padding: 0 styleguide.spacing-get('regular') 0;
   margin-top: styleguide.spacing-get('xlarge');
 
   @include styleguide.mq-min('desktop-min') {
