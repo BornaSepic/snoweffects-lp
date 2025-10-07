@@ -1,0 +1,108 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.USP {
+  background-color: styleguide.color-get('snow');
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column;
+  gap: styleguide.spacing-get('large');
+  justify-content: space-between;
+  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
+
+  @include styleguide.mq-min('desktop-min') {
+    flex-flow: row;
+    gap: styleguide.spacing-get('xsmall');
+    padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
+  }
+
+  &__content {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column;
+    justify-content: space-between;
+    gap: styleguide.spacing-get('medium');
+    padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
+
+    @include styleguide.mq-min('desktop-min') {
+      flex-flow: row;
+      gap: styleguide.spacing-get('xsmall');
+    }
+
+    li {
+      display: grid;
+      grid-template-areas:
+        "32px 1fr"
+        "32px 1fr";
+      grid-template-columns: 32px 1fr;
+      gap: styleguide.spacing-get('regular');
+
+      @include styleguide.mq-min('desktop-min') {
+        max-width: styleguide.rem-calc(380);
+      }
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h3 {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: styleguide.spacing-get('regular');
+        margin: 0;
+        font-size: styleguide.font-size('medium');
+        line-height: 1.2;
+
+        @include styleguide.mq-min('desktop-min') {
+          font-size: styleguide.font-size('large');
+        }
+      }
+
+      p {
+        margin: 0;
+        font-size: styleguide.font-size('regular');
+        line-height: 1.4;
+        font-weight: 350;
+        grid-column-end: 2;
+        grid-column-start: 2;
+
+        @include styleguide.mq-min('desktop-min') {
+          grid-column-start: 1;
+          grid-column-end: span 2;
+          font-size: styleguide.font-size('medium');
+        }
+      }
+    }
+
+    @include styleguide.mq-min('desktop-min') {
+      flex-flow: row;
+      gap: styleguide.spacing-get('xsmall');
+      padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 120%;
+    left: -10%;
+
+    &__container {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+    }
+  }
+}
