@@ -10,12 +10,12 @@
   flex-flow: column;
   gap: styleguide.spacing-get('large');
   justify-content: space-between;
-  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
+  padding: styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular') styleguide.spacing-get('large');
 
   @include styleguide.mq-min('desktop-min') {
     flex-flow: row;
     gap: styleguide.spacing-get('xsmall');
-    padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
+    padding: styleguide.spacing-get('xxxlarge') styleguide.spacing-get('xxlarge') styleguide.spacing-get('xlarge');
   }
 
   &__content {
@@ -29,7 +29,6 @@
     flex-flow: column;
     justify-content: space-between;
     gap: styleguide.spacing-get('medium');
-    padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
 
     @include styleguide.mq-min('desktop-min') {
       flex-flow: row;
