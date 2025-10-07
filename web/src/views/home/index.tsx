@@ -1,4 +1,6 @@
 import { type FC } from 'react'
+import 'swiper/css'
+import 'swiper/css/scrollbar'
 import { Main } from '../../components/elements/main'
 import { type GetHomepageQuery } from '../../core/dato/sdk/blueprint'
 import { Hero } from '../../components/blocks/hero'
@@ -6,6 +8,8 @@ import { FooterCard } from '../../components/blocks/footer-card'
 import { LogoCarousel } from '../../components/blocks/logo-carousel'
 import { ContentCards } from '../../components/blocks/content-cards'
 import { FAQ } from '../../components/blocks/faq'
+import { FeaturedVideo } from '../../components/blocks/featured-video'
+import { Reviews } from '../../components/blocks/reviews'
 
 type Props = {
   data: GetHomepageQuery
@@ -100,6 +104,62 @@ export const Home: FC<Props> = ({ data }) => {
               },
               ctaLink: '#',
               ctaLabel: 'View Kit'
+            }
+          ]}
+        />
+        <Reviews
+          id={"reviews"}
+          reviews={[
+            {
+              content: 'Never tried this before, always used the plastic buffalo snow and polyester blankets to create a theme for Christmas. Saw the ad and wanted to see if it would WOW my neighbors. This stuff is great, very realistic, and eco-friendly too. I would tell anyone if you want to create a beautiful winter scene for Christmas, this is a must have. Just love it. Thank you so much',
+              author: 'NANCY D',
+              note: 'Verified Buyer'
+            },
+            {
+              content: 'I was blown away by the quality of the snow. It made our holiday party unforgettable!',
+              author: 'John Doe',
+              note: 'Verified Buyer'
+            },
+            {
+              content: 'Setting up the snow was a breeze, and it looked incredibly realistic. Highly recommend!',
+              author: 'Jane Smith',
+              note: 'Verified Buyer'
+            }
+          ]}
+        />
+        <FeaturedVideo
+          title={<>You Deserve The Magic <br/> without the Mess</>}
+          subtitle={'WHY SNOWEFFECT?'}
+          video={{
+            src: 'http://localhost:2000/videos/house.mp4'
+          }}
+          mobileVideo={{
+            src: 'http://localhost:2000/videos/house.mp4'
+          }}
+          valueProps={[
+            {
+              title: 'Looks Like Real Snow',
+              description: 'Soft, fluffy, and textured like the real thing.'
+            },
+            {
+              title: 'Easy to Use Anywhere',
+              description: 'Just open, sprinkle, and style.'
+            },
+            {
+              title: 'Kid & Pet Safe',
+              description: 'Made from cellulose. No chemicals.'
+            },
+            {
+              title: 'Cleans Up in Minutes',
+              description: 'Sweep or vacuum and toss.'
+            },
+            {
+              title: 'Won’t Blow Away Easily',
+              description: 'Stays put. Pair with SnowHold for windy areas.'
+            },
+            {
+              title: 'Works with Lights & Decor',
+              description: 'Will not melt, stain, or damage.'
             }
           ]}
         />

@@ -1,0 +1,133 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+
+.Reviews {
+  overflow: hidden;
+  background-color: styleguide.color-get('white');
+  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
+
+  @include styleguide.mq-min('desktop-min') {
+    padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: styleguide.spacing-get('xxlarge');
+  }
+
+  &__button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: styleguide.spacing-get('xsmall');
+    border-radius: 8px;
+    background: #0000001A;
+    transition: background 0.3s ease;
+
+    @include styleguide.mq-min('desktop-min') {
+      background: styleguide.color-get('snow');
+    }
+
+    &:hover {
+      background: rgb(238 240 248 / 46%);
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: styleguide.spacing-get('medium');
+
+    &__buttons {
+      display: flex;
+      gap: styleguide.spacing-get('xxsmall');
+    }
+
+    &__scrollbar {
+      cursor: pointer;
+      background-color: transparent;
+      overflow: hidden;
+      width: 100%;
+      height: styleguide.rem-calc(4);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: styleguide.rem-calc(4);
+        background-color: #21212133;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 2px;
+      }
+
+      &__wrapper {
+        width: 100%;
+        padding: styleguide.rem-calc(16) 0;
+      }
+
+      :global(.swiper-scrollbar-drag) {
+        cursor: pointer;
+        background-color: transparent;
+        border-radius: 0;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: styleguide.rem-calc(4);
+          background-color: styleguide.color-get('black');
+          border-radius: 2px;
+        }
+      }
+
+      &:global(.swiper-scrollbar-lock) {
+        display: block;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__review {
+    display: flex;
+    flex-flow: column;
+    gap: styleguide.spacing-get('large');
+
+    &__content {
+      font-weight: 350;
+      font-size: styleguide.font-size('large');
+      line-height: 1.4;
+      text-align: center;
+      margin: 0;
+
+      @include styleguide.mq-min('desktop-min') {
+        font-size: styleguide.font-size('xlarge');
+      }
+
+      &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: styleguide.spacing-get('regular');
+      }
+
+      &__author {
+        font-size: styleguide.font-size('medium');
+        color: styleguide.color-get('brown');
+        font-weight: 500;
+      }
+
+      &__note {
+        font-weight: 350;
+        font-size: styleguide.font-size('medium');
+        color: styleguide.color-get('green');
+      }
+    }
+  }
+}
