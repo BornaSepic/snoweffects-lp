@@ -18,7 +18,8 @@ export type Styles = {
   "ContentCards__content__right__list__item": "ContentCards__content__right__list__item",
   "ContentCards__content__right__title": "ContentCards__content__right__title",
   "ContentCards__content__subtitle": "ContentCards__content__subtitle",
-  "ContentCards__content__title": "ContentCards__content__title"
+  "ContentCards__content__title": "ContentCards__content__title",
+  "ContentCards__wrapper": "ContentCards__wrapper"
 }
 
 export type ClassNames = keyof Styles

@@ -121,5 +121,6 @@
     "start": "./bin/start.sh",
     "test": "bb test",
     "typecheck": "bb typecheck"
-  }
+  },
+  "packageManager": "pnpm@9.14.1"
 }

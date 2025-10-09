@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Cta } from '../../elements/cta'
 import { SnowflakeIcon } from '../../icons/snowflake'
 import clsx from 'clsx'
+import { SnowEffect } from '../../elements/snow-effect'
 
 export type Props = {
   title: React.ReactNode
@@ -26,6 +27,7 @@ export type Props = {
       height: number
     }
   }>
+  showSnowEffect?: boolean
 }
 
 export const ContentCards: FC<Props> = async ({
@@ -36,79 +38,89 @@ export const ContentCards: FC<Props> = async ({
   cta,
   contentTitle,
   contentItems,
-  cards
+  cards,
+  showSnowEffect = false
 }) => {
   return (
-    <section className={style.ContentCards}>
-      <div
-        className={clsx(
-          style.ContentCards__content,
-          contentAligment === 'center'
-            ? style['ContentCards__content--center']
-            : contentAligment === 'right'
-              ? null
-              : null
-        )}
-      >
-        <div className={style.ContentCards__content__left}>
-          {subtitle && (
-            <p className={style.ContentCards__content__subtitle}>{subtitle}</p>
+    <section className={style.ContentCards__wrapper}>
+      {showSnowEffect ? <SnowEffect color={'black'} /> : null}
+      <div className={style.ContentCards}>
+        <div
+          className={clsx(
+            style.ContentCards__content,
+            contentAligment === 'center'
+              ? style['ContentCards__content--center']
+              : contentAligment === 'right'
+                ? null
+                : null
           )}
-          <h2 className={style.ContentCards__content__title}>{title}</h2>
-          <p className={style.ContentCards__content__description}>
-            {description}
-          </p>
-        </div>
+        >
+          <div className={style.ContentCards__content__left}>
+            {subtitle && (
+              <p className={style.ContentCards__content__subtitle}>
+                {subtitle}
+              </p>
+            )}
+            <h2 className={style.ContentCards__content__title}>{title}</h2>
+            <p className={style.ContentCards__content__description}>
+              {description}
+            </p>
+          </div>
 
-        {contentTitle ? (
-          <div className={style.ContentCards__content__right}>
-            <div>
-              <h3 className={style.ContentCards__content__right__title}>
-                {contentTitle}
-              </h3>
-              {contentItems ? (
-                <ul className={style.ContentCards__content__right__list}>
-                  {contentItems.map((item, index) => (
-                    <li
-                      key={index}
-                      className={style.ContentCards__content__right__list__item}
-                    >
-                      <SnowflakeIcon />
-                      <span>{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+          {contentTitle ? (
+            <div className={style.ContentCards__content__right}>
+              <div>
+                <h3 className={style.ContentCards__content__right__title}>
+                  {contentTitle}
+                </h3>
+                {contentItems ? (
+                  <ul className={style.ContentCards__content__right__list}>
+                    {contentItems.map((item, index) => (
+                      <li
+                        key={index}
+                        className={
+                          style.ContentCards__content__right__list__item
+                        }
+                      >
+                        <SnowflakeIcon />
+                        <span>{item.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+              {cta && (
+                <Cta link={cta.href} mode={'primary'} label={cta.label} />
+              )}
             </div>
-            {cta && <Cta link={cta.href} mode={'primary'} label={cta.label} />}
-          </div>
-        ) : null}
-      </div>
-      <div className={style.ContentCards__cards}>
-        {cards.map((card, index) => (
-          <div key={index} className={style.ContentCards__card}>
-            <div className={style.ContentCards__card__image}>
-              <Image
-                src={card.image.src}
-                alt={card.image.alt}
-                width={card.image.width}
-                height={card.image.height}
-              />
-            </div>
-            <div className={style.ContentCards__card__content}>
-              <h4 className={style.ContentCards__card__content__title}>
-                {card.title}
-              </h4>
-              {card.ctaLabel && card.ctaLink ? (
-                <Cta
-                  link={card.ctaLink}
-                  mode={'primary'}
-                  label={card.ctaLabel}
+          ) : null}
+        </div>
+        <div className={style.ContentCards__cards}>
+          {cards.map((card, index) => (
+            <div key={index} className={style.ContentCards__card}>
+              <div className={style.ContentCards__card__image}>
+                <Image
+                  src={card.image.src}
+                  alt={card.image.alt}
+                  width={card.image.width}
+                  height={card.image.height}
                 />
-              ) : null}
+              </div>
+              <div className={style.ContentCards__card__content}>
+                <h4 className={style.ContentCards__card__content__title}>
+                  {card.title}
+                </h4>
+                {card.ctaLabel && card.ctaLink ? (
+                  <Cta
+                    link={card.ctaLink}
+                    mode={'primary'}
+                    label={card.ctaLabel}
+                  />
+                ) : null}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

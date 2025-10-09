@@ -4,6 +4,7 @@ import { Phone } from '../../icons/phone'
 import { HeaderLogo } from '../../icons/header-logo'
 import { Cta } from '../../elements/cta'
 import Image from 'next/image'
+import { SnowEffect } from '../../elements/snow-effect'
 
 export type Props = {
   title: React.ReactNode
@@ -59,6 +60,8 @@ export const Hero: FC<Props> = ({
           />
         </div>
       </div>
+      <SnowEffect />
+
       <div className={style.Hero__header}>
         <HeaderLogo />
         <div>

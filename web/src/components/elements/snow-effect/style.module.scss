@@ -1,0 +1,36 @@
+@use 'colors' as colors;
+@use 'styleguide' as styleguide;
+@use 'mq' as mq;
+@use 'mixins' as mixins;
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.SnowEffect {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+
+  canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}

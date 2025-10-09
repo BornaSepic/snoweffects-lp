@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import style from './style.module.scss'
 import { SnowflakeIcon } from '../../icons/snowflake'
 import { FeaturedVideoPlayer } from './video'
+import { SnowEffect } from '../../elements/snow-effect'
 
 export type Props = {
   title: React.ReactNode
@@ -28,8 +29,8 @@ export const FeaturedVideo: FC<Props> = async ({
         <FeaturedVideoPlayer
           mobileVideo={mobileVideo}
           video={video}
-
         />
+        <SnowEffect color={'white'} />
         <div className={style.FeaturedVideo__header}>
           <h1>{subtitle}</h1>
           <h2>{title}</h2>

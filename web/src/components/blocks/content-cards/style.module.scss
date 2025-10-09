@@ -10,6 +10,10 @@
     padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
   }
 
+  &__wrapper {
+    position: relative;
+  }
+
   &__content {
     display: flex;
     flex-flow: column;

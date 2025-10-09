@@ -512,6 +512,7 @@ export const Home: FC<Props> = ({ data }) => {
           ]}
         />
         <ContentCards
+          showSnowEffect={true}
           title={
             <>
               Real Projects from <br /> <i>Real Customers</i>
@@ -606,7 +607,8 @@ export const Home: FC<Props> = ({ data }) => {
         <ContentCards
           title={
             <>
-              Need to Host a <br /> <i>Bigger Event</i> or <br /> <i>Display</i>?
+              Need to Host a <br /> <i>Bigger Event</i> or <br /> <i>Display</i>
+              ?
             </>
           }
           description={
