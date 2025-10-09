@@ -5,11 +5,13 @@
 
 .Hero {
   position: relative;
-  height: 80vh;
+  aspect-ratio: 0.66;
+
   overflow: hidden;
   padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');
 
   @include styleguide.mq-min('desktop-min') {
+    aspect-ratio: 1.8;
     padding: styleguide.spacing-get('xxlarge');
   }
 
@@ -69,6 +71,7 @@
     color: styleguide.color-get('white');
 
     h1 {
+      color: #FFFFFFCC;
       margin: 0;
       line-height: 1.2;
       font-size: styleguide.font-size('regular');

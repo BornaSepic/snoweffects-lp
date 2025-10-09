@@ -1,5 +1,6 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
 export type Styles = {
+  "--font-playfair-display": "--font-playfair-display",
   "--side-padding": "--side-padding",
   "--top-padding": "--top-padding",
   "ContentCards": "ContentCards",

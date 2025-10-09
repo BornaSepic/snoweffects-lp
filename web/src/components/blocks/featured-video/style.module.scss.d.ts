@@ -1,5 +1,6 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
 export type Styles = {
+  "--font-playfair-display": "--font-playfair-display",
   "FeaturedVideo": "FeaturedVideo",
   "FeaturedVideo__background": "FeaturedVideo__background",
   "FeaturedVideo__background__desktop": "FeaturedVideo__background__desktop",

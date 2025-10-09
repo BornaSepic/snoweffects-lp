@@ -1,5 +1,6 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
 export type Styles = {
+  "--font-playfair-display": "--font-playfair-display",
   "FAQ": "FAQ",
   "FAQ__answer": "FAQ__answer",
   "FAQ__answer__wrapper": "FAQ__answer__wrapper",

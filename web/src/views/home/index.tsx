@@ -386,64 +386,6 @@ export const Home: FC<Props> = ({ data }) => {
             }
           ]}
         />
-        <ContentCards
-          title={
-            <>
-              Real Projects from <br /> <i>Real Customers</i>
-            </>
-          }
-          subtitle={'UNFORGETTABLE SCENES'}
-          description={
-            'From front porches to beach vow renewals, see how SnowEffects has helped create unforgettable scenes.'
-          }
-          contentAligment={'center'}
-          cards={[
-            {
-              title: 'North Pole Setup',
-              image: {
-                src: '/images/north-pole-setup.png',
-                alt: 'North Pole Setup',
-                width: 400,
-                height: 300
-              },
-              ctaLink: '#',
-              ctaLabel: 'View Kit'
-            },
-            {
-              title: 'Snow by the Poolside',
-              image: {
-                src: '/images/snow-by-the-poolside.png',
-                alt: 'Snow by the Poolside',
-                width: 400,
-                height: 300
-              },
-              ctaLink: '#',
-              ctaLabel: 'View Kit'
-            },
-            {
-              title: 'Winter Wonderland Garden',
-              image: {
-                src: '/images/winter-wonderland-garden.jpg',
-                alt: 'Winter Wonderland Garden',
-                width: 400,
-                height: 300
-              },
-              ctaLink: '#',
-              ctaLabel: 'View Kit'
-            },
-            {
-              title: 'Snow-Kissed Entrance',
-              image: {
-                src: '/images/snow-kissed-entrance.jpg',
-                alt: 'Snow-Kissed Entrance',
-                width: 400,
-                height: 300
-              },
-              ctaLink: '#',
-              ctaLabel: 'View Kit'
-            }
-          ]}
-        />
         <Steps
           id={'how-to-use'}
           title={'Create Your Scene in 3 Simple Steps'}
@@ -531,7 +473,8 @@ export const Home: FC<Props> = ({ data }) => {
         <FeaturedVideo
           title={
             <>
-              You Deserve The Magic <br /> without the Mess
+              You Deserve <br className={'hide-desktop'} /> <i>The Magic</i>{' '}
+              <br /> without the Mess
             </>
           }
           subtitle={'WHY SNOWEFFECT?'}
@@ -565,6 +508,64 @@ export const Home: FC<Props> = ({ data }) => {
             {
               title: 'Works with Lights & Decor',
               description: 'Will not melt, stain, or damage.'
+            }
+          ]}
+        />
+        <ContentCards
+          title={
+            <>
+              Real Projects from <br /> <i>Real Customers</i>
+            </>
+          }
+          subtitle={'UNFORGETTABLE SCENES'}
+          description={
+            'From front porches to beach vow renewals, see how SnowEffects has helped create unforgettable scenes.'
+          }
+          contentAligment={'center'}
+          cards={[
+            {
+              title: 'North Pole Setup',
+              image: {
+                src: '/images/north-pole-setup.png',
+                alt: 'North Pole Setup',
+                width: 400,
+                height: 300
+              },
+              ctaLink: '#',
+              ctaLabel: 'View Kit'
+            },
+            {
+              title: 'Snow by the Poolside',
+              image: {
+                src: '/images/snow-by-the-poolside.png',
+                alt: 'Snow by the Poolside',
+                width: 400,
+                height: 300
+              },
+              ctaLink: '#',
+              ctaLabel: 'View Kit'
+            },
+            {
+              title: 'Winter Wonderland Garden',
+              image: {
+                src: '/images/winter-wonderland-garden.jpg',
+                alt: 'Winter Wonderland Garden',
+                width: 400,
+                height: 300
+              },
+              ctaLink: '#',
+              ctaLabel: 'View Kit'
+            },
+            {
+              title: 'Snow-Kissed Entrance',
+              image: {
+                src: '/images/snow-kissed-entrance.jpg',
+                alt: 'Snow-Kissed Entrance',
+                width: 400,
+                height: 300
+              },
+              ctaLink: '#',
+              ctaLabel: 'View Kit'
             }
           ]}
         />
@@ -605,7 +606,7 @@ export const Home: FC<Props> = ({ data }) => {
         <ContentCards
           title={
             <>
-              Need to Host a <br /> Bigger Event or <br /> Display?
+              Need to Host a <br /> <i>Bigger Event</i> or <br /> <i>Display</i>?
             </>
           }
           description={

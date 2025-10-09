@@ -1,6 +1,7 @@
 @use 'colors' as colors;
 @use 'styleguide' as styleguide;
 @use 'mq' as mq;
+@use 'mixins' as mixins;
 
 .ContentCards {
   padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
@@ -38,9 +39,11 @@
       font-size: styleguide.font-size('medium');
       line-height: 1.2;
       color: styleguide.color-get('green');
+      font-weight: 500;
     }
 
     &__title {
+      @include mixins.headingFont();
       font-weight: 400;
       font-size: styleguide.font-size('xxlarge');
       margin: 0 0 styleguide.spacing-get('medium') 0;
@@ -48,7 +51,7 @@
 
       @include styleguide.mq-min('desktop-min') {
         font-size: styleguide.font-size('xxxlarge');
-        margin: 0 0 styleguide.spacing-get('regular') 0;
+        margin: 0 0 styleguide.spacing-get('medium') 0;
       }
     }
 
@@ -94,6 +97,7 @@
           display: flex;
           align-items: center;
           gap: styleguide.spacing-get('xxsmall');
+          font-size: styleguide.font-size('medium');
         }
       }
     }
@@ -165,6 +169,7 @@
       }
 
       &__title {
+        @include mixins.headingFont();
         font-weight: 400;
         margin: 0;
         color: styleguide.color-get('white');

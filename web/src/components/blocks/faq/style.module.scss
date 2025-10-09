@@ -1,6 +1,7 @@
 @use 'colors' as colors;
 @use 'styleguide' as styleguide;
 @use 'mq' as mq;
+@use 'mixins' as mixins;
 
 .FAQ {
   display: flex;
@@ -17,6 +18,7 @@
   }
 
   &__title {
+    @include mixins.headingFont();
     margin: 0;
     font-weight: 400;
     font-size: styleguide.font-size('xxlarge');

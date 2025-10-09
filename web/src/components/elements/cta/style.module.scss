@@ -8,7 +8,7 @@
   text-align: center;
   width: 100%;
   white-space: nowrap;
-  box-shadow: 0px 0px 0px 1.5px styleguide.color-get('brown');
+  border: none;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -16,24 +16,18 @@
   padding: var(--top-padding, styleguide.spacing-get('medium')) var(--side-padding, styleguide.spacing-get('xlarge'));
   border-radius: 4px;
 
-  @include styleguide.mq-min('desktop-min') {
-    border-radius: 8px;
-  }
-
   &--primary {
     background-color: styleguide.color-get('brown');
-    border-color: styleguide.color-get('brown');
     color: styleguide.color-get('white');
   }
 
   &--secondary {
     background-color: styleguide.color-get('white');
-    border-color: styleguide.color-get('black');
   }
 
   &__hoverContent {
-    box-shadow: 0px 0px 0px 1.5px styleguide.color-get('brown');
-    border-radius: 8px;
+    border: 2px solid styleguide.color-get('white');
+    border-radius: 4px;
     background-color: styleguide.color-get('white');
     color: styleguide.color-get('black');
     white-space: nowrap;

@@ -55,7 +55,7 @@
       }
 
       &__container {
-        max-width: styleguide.rem-calc(430);
+        max-width: styleguide.rem-calc(450);
 
         @include styleguide.mq-min('desktop-min') {
           padding-top: styleguide.spacing-get('medium');
@@ -93,6 +93,7 @@
           line-height: 1.1;
 
           @include styleguide.mq-min('desktop-min') {
+            font-size: styleguide.font-size('xxxlarge');
             margin: 0 0 styleguide.spacing-get('medium') 0;
             font-size: styleguide.rem-calc(75)large;
           }

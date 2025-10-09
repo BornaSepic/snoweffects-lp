@@ -15,11 +15,13 @@
   @include styleguide.mq-min('desktop-min') {
     flex-flow: row;
     gap: styleguide.spacing-get('xsmall');
-    padding: styleguide.spacing-get('xxxlarge') styleguide.spacing-get('xxlarge') styleguide.spacing-get('xlarge');
+    padding: styleguide.spacing-get('xxxlarge') 0 styleguide.spacing-get('xxlarge');
+    margin-bottom: styleguide.spacing-get('xlarge');
   }
 
   &__content {
     max-width: 1440px;
+    box-sizing: content-box;
     width: 100%;
     padding: 0;
     margin: 0 auto;
@@ -33,6 +35,12 @@
     @include styleguide.mq-min('desktop-min') {
       flex-flow: row;
       gap: styleguide.spacing-get('xsmall');
+    }
+
+    @include styleguide.mq-min('desktop-min') {
+      flex-flow: row;
+      gap: styleguide.spacing-get('xsmall');
+      padding: 0 styleguide.spacing-get('xxlarge');
     }
 
     li {
@@ -81,12 +89,6 @@
           font-size: styleguide.font-size('medium');
         }
       }
-    }
-
-    @include styleguide.mq-min('desktop-min') {
-      flex-flow: row;
-      gap: styleguide.spacing-get('xsmall');
-      padding: styleguide.spacing-get('xlarge') styleguide.spacing-get('xxlarge');
     }
   }
 

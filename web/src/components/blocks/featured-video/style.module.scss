@@ -1,10 +1,11 @@
 @use 'colors' as colors;
 @use 'styleguide' as styleguide;
 @use 'mq' as mq;
+@use 'mixins' as mixins;
 
 .FeaturedVideo {
   position: relative;
-  height: 80vh;
+  aspect-ratio: 0.66;
   padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('large') styleguide.spacing-get('regular');
 
   display: flex;
@@ -12,6 +13,7 @@
   justify-content: flex-end;
 
   @include styleguide.mq-min('desktop-min') {
+    aspect-ratio: 1.8;
     justify-content: flex-start;
     justify-content: space-between;
     padding: styleguide.spacing-get('xxlarge');
@@ -37,6 +39,7 @@
       line-height: 1.2;
       font-size: styleguide.font-size('regular');
       font-weight: 500;
+      color: #FFFFFFCC;
 
       @include styleguide.mq-min('desktop-min') {
         font-size: styleguide.font-size('medium');
@@ -44,6 +47,7 @@
     }
 
     h2 {
+      @include mixins.headingFont();
       font-weight: 400;
       margin: styleguide.spacing-get('regular') 0 0;
       font-size: styleguide.font-size('xxlarge');
@@ -131,7 +135,8 @@
     align-items: center;
     justify-content: center;
     padding: styleguide.spacing-get('xxsmall') 18px;
-    border: 1px solid styleguide.color-get('black');
+    border: none;
+    border-radius: 4px;
     background: #FFFFFFCC;
     position: absolute;
     top: styleguide.spacing-get('regular');

@@ -1,5 +1,6 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
 export type Styles = {
+  "--font-playfair-display": "--font-playfair-display",
   "FooterCard": "FooterCard",
   "FooterCard__content": "FooterCard__content",
   "FooterCard__content__cta": "FooterCard__content__cta",
