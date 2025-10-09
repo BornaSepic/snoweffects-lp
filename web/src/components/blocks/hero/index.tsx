@@ -63,7 +63,9 @@ export const Hero: FC<Props> = ({
       <SnowEffect />
 
       <div className={style.Hero__header}>
-        <HeaderLogo />
+        <a href="https://www.snoweffects.com/">
+          <HeaderLogo />
+        </a>
         <div>
           <a className={style.Hero__header__cta__mobile} href={phoneCta.href}>
             <Phone />
@@ -89,10 +91,12 @@ export const Hero: FC<Props> = ({
                 key={cta.href + cta.label}
                 link={cta.href}
                 mode={'primary'}
-                label={<>
-                  <span className={'hide-desktop'}>{mobileLabel}</span>
-                  <span className={'hide-mobile'}>{desktopLabel}</span>
-                </>}
+                label={
+                  <>
+                    <span className={'hide-desktop'}>{mobileLabel}</span>
+                    <span className={'hide-mobile'}>{desktopLabel}</span>
+                  </>
+                }
               />
             )
           })}

@@ -71,7 +71,7 @@
 
     &__valueProps {
       display: grid;
-      padding: styleguide.spacing-get('regular');
+      padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') 0 styleguide.spacing-get('regular');
       margin: 0;
       grid-template-columns: repeat(1, 1fr);
       list-style-type: none;

@@ -22,7 +22,7 @@ export const Footer: FC = async () => {
       {
         title: 'Snow Effects',
         links: [
-          { title: 'Privacy Policy', href: '/' },
+          { title: 'Privacy Policy', href: 'https://www.snoweffects.com/privacy' },
           { title: '©2025 All rights reserved', href: null }
         ]
       }

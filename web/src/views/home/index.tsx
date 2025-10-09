@@ -37,11 +37,11 @@ export const Home: FC = () => {
             href: 'tel:4404687669'
           }}
           ctas={[
-            { label: 'Shop Snow Kits', href: '/' },
+            { label: 'Shop Snow Kits', href: '#products' },
             {
               label: 'See Real Setups',
               desktopLabel: 'See Real Customer Setups',
-              href: '/'
+              href: '#reviews'
             }
           ]}
           desktopImage={{
@@ -217,7 +217,7 @@ export const Home: FC = () => {
               categories: ['Snow Kits'],
               ctaLabel: 'Shop Kit',
               title: 'Indoor Mini Scene Kit',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Snow-Effects-tm-Indoor-Mini-Snow-Scene-Kit-p786894999',
               image: {
                 src: '/images/products/indoor-mini-scene-kit.jpg',
                 alt: 'Indoor Mini Scene Kit',
@@ -236,7 +236,7 @@ export const Home: FC = () => {
               categories: ['Snow Kits'],
               ctaLabel: 'Shop Kit',
               title: 'Indoor Mantle + Tabletop',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Snow-Effects-tm-Mantel-Table-Kit-p786895175',
               image: {
                 src: '/images/products/indoor-mantle-tabletop.jpg',
                 alt: 'Indoor Mantle + Tabletop',
@@ -259,7 +259,7 @@ export const Home: FC = () => {
               categories: ['Snow Kits'],
               ctaLabel: 'Shop Kit',
               title: 'Full Entryway or Tree Base',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Snow-Effects-tm-Entryway-Kit-interior-or-exterior-p786895176',
               image: {
                 src: '/images/products/full-entryway-tree-base.jpg',
                 alt: 'Full Entryway or Tree Base',
@@ -282,7 +282,7 @@ export const Home: FC = () => {
               categories: ['Snow Kits'],
               ctaLabel: 'Shop Kit',
               title: 'Large Outdoor Display',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
               image: {
                 src: '/images/products/large-outdoor-display.jpg',
                 alt: 'Large Outdoor Display',
@@ -306,7 +306,7 @@ export const Home: FC = () => {
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
               title: 'SnowScape Artificial Snow',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/SnowScape-w-Flame-Retardant-Artificial-Snow-For-Film-and-Video-and-More-22lb-bag-Non-Adhesive-p708561842',
               image: {
                 src: '/images/products/snow-scape-artificial-snow.jpg',
                 alt: 'SnowScape Artificial Snow',
@@ -325,7 +325,7 @@ export const Home: FC = () => {
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
               title: 'SnowLive Artificial Snow',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/SnowLive-25lb-bag-p370109394',
               image: {
                 src: '/images/products/snow-live-artificial-snow.jpg',
                 alt: 'SnowLive Artificial Snow',
@@ -344,7 +344,7 @@ export const Home: FC = () => {
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
               title: 'Spray Snow',
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Spray-Snow-Case-of-12-p378452337',
               image: {
                 src: '/images/products/spray-snow.jpg',
                 alt: 'Spray Snow',
@@ -364,7 +364,7 @@ export const Home: FC = () => {
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
               title: "Underlayment for snow products - 5'x300'",
-              url: '#',
+              url: 'https://www.snoweffects.com/store/Underlayment-for-snow-products-5x300-Free-Shipping-p378452566',
               image: {
                 src: '/images/products/underlayment-for-snow-products-5-300.png',
                 alt: "Underlayment for snow products - 5'x300'",
@@ -527,7 +527,7 @@ export const Home: FC = () => {
                 width: 400,
                 height: 300
               },
-              ctaLink: '#',
+              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Indoor-Mini-Snow-Scene-Kit-p786894999',
               ctaLabel: 'View Kit'
             },
             {
@@ -549,7 +549,7 @@ export const Home: FC = () => {
                 width: 400,
                 height: 300
               },
-              ctaLink: '#',
+              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
               ctaLabel: 'View Kit'
             },
             {
@@ -560,7 +560,7 @@ export const Home: FC = () => {
                 width: 400,
                 height: 300
               },
-              ctaLink: '#',
+              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Entryway-Kit-interior-or-exterior-p786895176',
               ctaLabel: 'View Kit'
             }
           ]}
@@ -624,7 +624,7 @@ export const Home: FC = () => {
               )
             }
           ]}
-          cta={{ label: 'Contact our team', href: '/' }}
+          cta={{ label: 'Contact our team', href: 'https://www.snoweffects.com/contact' }}
           cards={[
             {
               title: 'ABC - The Bachelor "Show"',
