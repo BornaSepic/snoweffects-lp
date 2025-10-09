@@ -3,5 +3,7 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "private": true,
-  "scripts": {}
+  "scripts": {},
+  "packageManager": "pnpm@9.14.1"
+
 }
