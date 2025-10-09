@@ -15,22 +15,22 @@ export type Props = {
   }
 }
 
-export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
+export const StepsVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
   const [isPlaying, setIsPlaying] = useState(true)
 
   return (
     <>
       <button
         onClick={() => setIsPlaying(!isPlaying)}
-        className={style.FeaturedVideo__controls}
+        className={style.VideoPlayer__controls}
       >
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </button>
-      <div className={style.FeaturedVideo__background}>
-        <div className={style.FeaturedVideo__background__desktop}>
+      <div className={style.VideoPlayer__background}>
+        <div className={style.VideoPlayer__background__desktop}>
           <VideoPlayer
             containerClassName={
-              style.FeaturedVideo__background__video__container
+              style.VideoPlayer__background__video__container
             }
             content={{
               url: video.src,
@@ -42,10 +42,10 @@ export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
           />
         </div>
 
-        <div className={style.FeaturedVideo__background__mobile}>
+        <div className={style.VideoPlayer__background__mobile}>
           <VideoPlayer
             containerClassName={
-              style.FeaturedVideo__background__video__container
+              style.VideoPlayer__background__video__container
             }
             content={{
               url: mobileVideo.src,

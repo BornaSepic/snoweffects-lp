@@ -2,8 +2,23 @@ import type { Metadata, Viewport } from 'next'
 import type { FC, ReactNode } from 'react'
 import { WEBSITE_DESCRIPTION, WEBSITE_NAME } from '../core/seo'
 import '../core/styles/main.scss'
-import 'lenis/dist/lenis.css'
 import Providers from './providers'
+import { DM_Sans, Playfair_Display } from 'next/font/google';
+
+export const dm_sans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+export const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair-display',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: WEBSITE_NAME,
@@ -21,7 +36,10 @@ export type Props = {
 
 const RootLayout: FC<Props> = ({ children }) => {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${dm_sans.variable} ${playfair_display.variable}`}
+    >
       <body>
         <Providers>{children}</Providers>
       </body>

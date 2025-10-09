@@ -1,5 +1,7 @@
 /* AUTO-GENERATED FILE. DO NOT EDIT */
-export type Styles = {}
+export type Styles = {
+  "Header": "Header"
+}
 
 export type ClassNames = keyof Styles
 

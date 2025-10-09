@@ -29,8 +29,8 @@ $-font-sizes: (
 $-system-font-stack: (system-ui, sans-serif, 'Apple Color Emoji');
 
 $-font-families: (
-  'regular': 'Beausite',
-  'heading': 'PPEditorialNew'
+  'regular': var(--font-dm-sans),
+  'heading': var(--font-playfair-display)
 );
 
 @function family($name) {
@@ -51,3 +51,4 @@ $-font-weights: (
 @function weight($weight) {
   @return map.get-strict($-font-weights, $weight);
 }
+

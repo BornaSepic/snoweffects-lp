@@ -17,9 +17,9 @@ export const SnowflakeIcon: FC<Props> = ({ color = 'green' }) => {
         <path
           d="M7.9 14.9L6.9 12.9L4.7 13.3M7.9 2.10005L6.9 4.10005L4.7 3.70005M11.1 14.9L12.1 12.9L14.3 13.3M11.1 2.10005L12.1 4.10005L14.3 3.70005M13.5 15.7L11.1 10.9M11.1 10.9H7.9M11.1 10.9L12.3 8.50005M7.9 10.9L5.5 15.7M7.9 10.9L6.7 8.50005M13.5 1.30005L11.1 6.10005M11.1 6.10005L12.3 8.50005M11.1 6.10005H7.9M12.3 8.50005H17.5M1.5 8.50005H6.7M6.7 8.50005L7.9 6.10005M7.9 6.10005L5.5 1.30005M15.9 6.90005L14.7 8.50005L15.9 10.1M3.1 6.90005L4.3 8.50005L3.1 10.1"
           stroke="#B93508"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     )

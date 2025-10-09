@@ -11,6 +11,8 @@ import { FAQ } from '../../components/blocks/faq'
 import { FeaturedVideo } from '../../components/blocks/featured-video'
 import { Reviews } from '../../components/blocks/reviews'
 import { USP } from '../../components/blocks/usp'
+import { FeaturedProducts } from '../../components/blocks/featured-products'
+import { Steps } from '../../components/blocks/steps'
 
 type Props = {
   data: GetHomepageQuery
@@ -203,6 +205,187 @@ export const Home: FC<Props> = ({ data }) => {
             }
           ]}
         />
+        <FeaturedProducts
+          id={'products'}
+          title={
+            <>
+              Pick a Bundle or Build <br />
+              Your Own Snow Kit
+            </>
+          }
+          subtitle={
+            'We make it easy to get exactly what you need—whether you want an all-in-one scene kit or prefer to mix and match products.'
+          }
+          products={[
+            {
+              id: 'indoor-mini-scene-kit',
+              categories: ['Snow Kits'],
+              ctaLabel: 'Shop Kit',
+              title: 'Indoor Mini Scene Kit',
+              url: '#',
+              image: {
+                src: '/images/products/indoor-mini-scene-kit.jpg',
+                alt: 'Indoor Mini Scene Kit',
+                width: 300,
+                height: 300
+              },
+              description: '',
+              compareAtPrice: '$XX',
+              price: '$69',
+              priceBadge: 'SAVE 20%',
+              badge: 'UP TO 10 SQ FT',
+              features: ['4 SnowEffects Craft bags', '1 Spray Snow can']
+            },
+            {
+              id: 'indoor-mantle-tabletop',
+              categories: ['Snow Kits'],
+              ctaLabel: 'Shop Kit',
+              title: 'Indoor Mantle + Tabletop',
+              url: '#',
+              image: {
+                src: '/images/products/indoor-mantle-tabletop.jpg',
+                alt: 'Indoor Mantle + Tabletop',
+                width: 300,
+                height: 300
+              },
+              description: '',
+              compareAtPrice: null,
+              price: '$126',
+              priceBadge: null,
+              badge: 'UP TO 75 SQ FT',
+              features: [
+                '1 SnowScape bag',
+                '1 Sparkle Effect bag',
+                '2 Spray Snow cans'
+              ]
+            },
+            {
+              id: 'full-entryway-tree-base',
+              categories: ['Snow Kits'],
+              ctaLabel: 'Shop Kit',
+              title: 'Full Entryway or Tree Base',
+              url: '#',
+              image: {
+                src: '/images/products/full-entryway-tree-base.jpg',
+                alt: 'Full Entryway or Tree Base',
+                width: 300,
+                height: 300
+              },
+              description: '',
+              compareAtPrice: null,
+              price: '$351',
+              priceBadge: null,
+              badge: 'UP TO 225 SQ FT',
+              features: [
+                '3 SnowScape bags',
+                '1 SnowLive (adhesive snow) bag',
+                '1 Sparkle Effect bag'
+              ]
+            },
+            {
+              id: 'large-outdoor-display',
+              categories: ['Snow Kits'],
+              ctaLabel: 'Shop Kit',
+              title: 'Large Outdoor Display',
+              url: '#',
+              image: {
+                src: '/images/products/large-outdoor-display.jpg',
+                alt: 'Large Outdoor Display',
+                width: 300,
+                height: 300
+              },
+              description: '',
+              compareAtPrice: '$XXXX',
+              price: '$1275',
+              priceBadge: 'SAVE 20%',
+              badge: 'UP TO 225 SQ FT',
+              features: [
+                '10 SnowScape bags',
+                '2 SnowLive (adhesive snow) bags',
+                '1 Underlayment roll',
+                '2 Sparkle Effect bags'
+              ]
+            },
+            {
+              id: 'snow-scape-artificial-snow',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: 'SnowScape Artificial Snow',
+              url: '#',
+              image: {
+                src: '/images/products/snow-scape-artificial-snow.jpg',
+                alt: 'SnowScape Artificial Snow',
+                width: 300,
+                height: 300
+              },
+              description: 'Cellulose based non-adhesive artificial snow',
+              compareAtPrice: null,
+              price: '$79 / 22lb bag',
+              priceBadge: null,
+              badge: null,
+              features: []
+            },
+            {
+              id: 'snow-live-artificial-snow',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: 'SnowLive Artificial Snow',
+              url: '#',
+              image: {
+                src: '/images/products/snow-live-artificial-snow.jpg',
+                alt: 'SnowLive Artificial Snow',
+                width: 300,
+                height: 300
+              },
+              description: 'Specially designed for use on living plants',
+              compareAtPrice: null,
+              price: '$79 / 25lb bag',
+              priceBadge: null,
+              badge: null,
+              features: []
+            },
+            {
+              id: 'spray-snow',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: 'Spray Snow',
+              url: '#',
+              image: {
+                src: '/images/products/spray-snow.jpg',
+                alt: 'Spray Snow',
+                width: 300,
+                height: 300
+              },
+              description:
+                'Aerosol white snow for frosting windows and foliage.',
+              compareAtPrice: null,
+              price: '$38 / Case of 12',
+              priceBadge: null,
+              badge: null,
+              features: []
+            },
+            {
+              id: 'underlayment-for-snow-products-5-300',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: "Underlayment for snow products - 5'x300'",
+              url: '#',
+              image: {
+                src: '/images/products/underlayment-for-snow-products-5-300.png',
+                alt: "Underlayment for snow products - 5'x300'",
+                width: 300,
+                height: 300
+              },
+              description:
+                'Lay it underneath your outdoor displays for maximum hold.',
+              compareAtPrice: null,
+              price: '$257.00',
+              priceBadge: null,
+              badge: null,
+              features: []
+            }
+          ]}
+        />
         <ContentCards
           title={
             <>
@@ -258,6 +441,67 @@ export const Home: FC<Props> = ({ data }) => {
               },
               ctaLink: '#',
               ctaLabel: 'View Kit'
+            }
+          ]}
+        />
+        <Steps
+          id={'how-to-use'}
+          title={'Create Your Scene in 3 Simple Steps'}
+          backgroundImage={{
+            src: '/images/steps-background.png',
+            alt: 'How to use background',
+            width: 1920,
+            height: 1080
+          }}
+          steps={[
+            {
+              id: 'choose-your-products',
+              label: 'Step 1',
+              title: 'Start with a Bundle or Product Plan',
+              description:
+                'Choose from our pre-built kits or build your own using SnowScape, SnowHold, and SnowBlanket.',
+              asset: {
+                __typename: 'Image',
+                src: '/images/step-1.png',
+                alt: 'Choose your products',
+                width: 400,
+                height: 300
+              }
+            },
+            {
+              id: 'apply-anywhere',
+              label: 'Step 2',
+              title: (
+                <>
+                  Apply <br />
+                  Anywhere
+                </>
+              ),
+              description:
+                'Sprinkle directly from the bag, fluff by hand, or layer for volume. Add SnowHold for outdoor displays.',
+              asset: {
+                __typename: 'Video',
+                src: '/videos/house.mp4'
+              }
+            },
+            {
+              id: 'clean-up',
+              label: 'Step 3',
+              title: (
+                <>
+                  Clean up <br />
+                  Easily
+                </>
+              ),
+              description:
+                'Sweep or vacuum and toss. No water, no residue, no stress.',
+              asset: {
+                __typename: 'Image',
+                src: '/images/step-3.png',
+                alt: 'Choose your products',
+                width: 400,
+                height: 300
+              }
             }
           ]}
         />

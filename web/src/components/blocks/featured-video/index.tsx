@@ -37,14 +37,14 @@ export const FeaturedVideo: FC<Props> = async ({
       </div>
       <div className={style.FeaturedVideo__content}>
         <ul className={style.FeaturedVideo__content__valueProps}>
-          {valueProps.map((valueProps) => {
+          {valueProps.map((valueProp) => {
             return (
-              <li key={valueProps.title}>
+              <li key={valueProp.title}>
                 <h3>
                   <SnowflakeIcon color={'brown'} />{' '}
-                  <span>{valueProps.title}</span>
+                  <span>{valueProp.title}</span>
                 </h3>
-                <p>{valueProps.description}</p>
+                <p>{valueProp.description}</p>
               </li>
             )
           })}

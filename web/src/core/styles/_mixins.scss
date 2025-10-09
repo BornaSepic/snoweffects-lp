@@ -1,5 +1,6 @@
 @use './mq' as mq;
 @use './unit' as u;
+@use 'styleguide' as styleguide;
 
 @mixin onlyMobile($type: block) {
   display: $type;
@@ -22,6 +23,15 @@
   border: none;
   font-size: u.elw-scale(9, 14);
   line-height: 1;
+}
+
+@mixin headingFont {
+  font-family: styleguide.font-family('heading');
+  letter-spacing: -2px;
+}
+
+@mixin bodyFont {
+  font-family: styleguide.font-family('regular');
 }
 
 @mixin baseContainer($type: base) {

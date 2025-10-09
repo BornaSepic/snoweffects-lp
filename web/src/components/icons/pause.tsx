@@ -7,8 +7,8 @@ export const PauseIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path d="M0.999999 24L1 0" stroke="#434343" stroke-width="1.5" />
-      <path d="M13 24L13 0" stroke="#434343" stroke-width="1.5" />
+      <path d="M0.999999 24L1 0" stroke="#434343" strokeWidth="1.5" />
+      <path d="M13 24L13 0" stroke="#434343" strokeWidth="1.5" />
     </svg>
   )
 }
