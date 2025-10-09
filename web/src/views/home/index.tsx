@@ -474,10 +474,10 @@ export const Home: FC = () => {
           }
           subtitle={'WHY SNOWEFFECT?'}
           video={{
-            src: 'http://localhost:2000/videos/house.mp4'
+            src: '/videos/house.mp4'
           }}
           mobileVideo={{
-            src: 'http://localhost:2000/videos/house.mp4'
+            src: '/videos/house.mp4'
           }}
           valueProps={[
             {

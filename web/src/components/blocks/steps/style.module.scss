@@ -115,10 +115,15 @@
     }
 
     &__right {
+      width: 100%;
       max-width: 100%;
       display: flex;
       flex-basis: 0;
       flex-grow: 1;
+
+      @include styleguide.mq-max('desktop-min') {
+        aspect-ratio: 1;
+      }
 
       @include styleguide.mq-min('desktop-min') {
         max-width: calc(50% + styleguide.spacing-get('xlarge'));
