@@ -19,24 +19,26 @@ export const FooterCard: FC = async () => {
   }
 
   return (
-    <section className={style.FooterCard}>
-      <div className={style.FooterCard__content}>
-        <Image
-          src="/images/footer-card-snow.png"
-          alt={'Snow Effects - Footer Card Snow'}
-          width={1024}
-          height={44}
-          priority
-          className={style.FooterCard__image}
-        />
-        <div>
-          <h2 className={style.FooterCard__content__title}>{DATA.title}</h2>
-          <p className={style.FooterCard__content__description}>
-            {DATA.description}
-          </p>
-        </div>
-        <div className={style.FooterCard__content__cta}>
-          <Cta label={DATA.cta.label} link={DATA.cta.href} />
+    <section className={style.FooterCard__wrapper}>
+      <div className={style.FooterCard}>
+        <div className={style.FooterCard__content}>
+          <Image
+            src="/images/footer-card-snow.png"
+            alt={'Snow Effects - Footer Card Snow'}
+            width={1024}
+            height={44}
+            priority
+            className={style.FooterCard__image}
+          />
+          <div>
+            <h2 className={style.FooterCard__content__title}>{DATA.title}</h2>
+            <p className={style.FooterCard__content__description}>
+              {DATA.description}
+            </p>
+          </div>
+          <div className={style.FooterCard__content__cta}>
+            <Cta label={DATA.cta.label} link={DATA.cta.href} />
+          </div>
         </div>
       </div>
     </section>

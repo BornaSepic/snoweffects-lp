@@ -4,7 +4,7 @@
 
 .Footer {
   background-color: styleguide.color-get('black');
-  padding: styleguide.spacing-get('large') styleguide.spacing-get('regular');
+  padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('large');
 
   @include styleguide.mq-min('desktop-min') {
     padding: styleguide.spacing-get('xxlarge') styleguide.spacing-get('xxlarge') styleguide.spacing-get('xxxxlarge');

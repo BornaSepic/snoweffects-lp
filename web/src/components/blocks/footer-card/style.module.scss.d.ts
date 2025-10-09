@@ -6,7 +6,8 @@ export type Styles = {
   "FooterCard__content__cta": "FooterCard__content__cta",
   "FooterCard__content__description": "FooterCard__content__description",
   "FooterCard__content__title": "FooterCard__content__title",
-  "FooterCard__image": "FooterCard__image"
+  "FooterCard__image": "FooterCard__image",
+  "FooterCard__wrapper": "FooterCard__wrapper"
 }
 
 export type ClassNames = keyof Styles

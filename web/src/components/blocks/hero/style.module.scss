@@ -4,8 +4,10 @@
 @use 'mixins' as mixins;
 
 .Hero {
-  position: relative;
+  position: sticky;
+  z-index: 0;
   aspect-ratio: 0.66;
+  top: 0;
 
   overflow: hidden;
   padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');

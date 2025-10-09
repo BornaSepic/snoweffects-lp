@@ -6,10 +6,13 @@
 .FooterCard {
   background-color: styleguide.color-get('black');
   padding: 0 styleguide.spacing-get('regular') 0;
-  margin-top: styleguide.spacing-get('xlarge');
 
   @include styleguide.mq-min('desktop-min') {
     padding: 0 styleguide.spacing-get('xxlarge');
+  }
+
+  &__wrapper {
+    padding-top: styleguide.spacing-get('xlarge');
   }
 
   &__image {
@@ -18,7 +21,7 @@
     left: 0;
     width: 100%;
     height: auto;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(-0.4deg);
   }
 
   &__content {

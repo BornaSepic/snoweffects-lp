@@ -16,7 +16,10 @@
     flex-flow: row;
     gap: styleguide.spacing-get('xsmall');
     padding: styleguide.spacing-get('xxxlarge') 0 styleguide.spacing-get('xxlarge');
-    margin-bottom: styleguide.spacing-get('xlarge');
+  }
+
+  &__wrapper {
+    padding-bottom: styleguide.spacing-get('xlarge');
   }
 
   &__content {

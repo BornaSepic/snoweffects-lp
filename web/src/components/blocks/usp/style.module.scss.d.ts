@@ -5,7 +5,8 @@ export type Styles = {
   "USP": "USP",
   "USP__content": "USP__content",
   "USP__image": "USP__image",
-  "USP__image__container": "USP__image__container"
+  "USP__image__container": "USP__image__container",
+  "USP__wrapper": "USP__wrapper"
 }
 
 export type ClassNames = keyof Styles

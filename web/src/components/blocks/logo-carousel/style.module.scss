@@ -9,7 +9,7 @@
 
   @include styleguide.mq-min('desktop-min') {
     padding: styleguide.spacing-get('xlarge') 0 0 0;
-    margin-bottom: styleguide.spacing-get('xxlarge');
+    padding-bottom: styleguide.spacing-get('large');
   }
 
   &__content {
@@ -17,10 +17,11 @@
     flex-flow: column;
     align-items: center;
     gap: styleguide.spacing-get('xlarge');
-    padding-bottom: styleguide.spacing-get('xxlarge');
+    padding-bottom: styleguide.spacing-get('xlarge');
 
     @include styleguide.mq-min('desktop-min') {
-      gap: styleguide.spacing-get('large');
+      padding-bottom: styleguide.spacing-get('xxlarge');
+      gap: styleguide.spacing-get('medium');
     }
 
     h2 {
