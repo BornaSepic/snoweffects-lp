@@ -28,7 +28,8 @@ export type Styles = {
   "FeaturedProducts__product__price": "FeaturedProducts__product__price",
   "FeaturedProducts__product__priceBadge": "FeaturedProducts__product__priceBadge",
   "FeaturedProducts__product__price__container": "FeaturedProducts__product__price__container",
-  "FeaturedProducts__product__title": "FeaturedProducts__product__title"
+  "FeaturedProducts__product__title": "FeaturedProducts__product__title",
+  "FeaturedProducts__wrapper": "FeaturedProducts__wrapper"
 }
 
 export type ClassNames = keyof Styles

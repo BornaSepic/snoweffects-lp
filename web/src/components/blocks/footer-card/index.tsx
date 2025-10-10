@@ -14,7 +14,7 @@ export const FooterCard: FC = async () => {
       'NO COLD. NO MESS. JUST MAGICAL, REALISTIC SNOW—DELIVERED TO YOUR DOOR.',
     cta: {
       label: 'Build Your Snow Scene',
-      href: '/'
+      href: '#products'
     }
   }
 

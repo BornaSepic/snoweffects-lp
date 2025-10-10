@@ -18,6 +18,10 @@
     gap: styleguide.spacing-get('xlarge');
   }
 
+  &__wrapper {
+    background-color: styleguide.color-get('white');
+  }
+
   &__header {
     display: flex;
     flex-direction: column;

@@ -6,14 +6,17 @@
 .Hero {
   position: sticky;
   z-index: 0;
-  aspect-ratio: 0.66;
   top: 0;
 
   overflow: hidden;
   padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');
 
+  @include styleguide.mq-max('desktop-min') {
+    aspect-ratio: 0.66;
+  }
+
   @include styleguide.mq-min('desktop-min') {
-    aspect-ratio: 1.8;
+    max-height: 80vh;
     padding: styleguide.spacing-get('xxlarge');
   }
 
