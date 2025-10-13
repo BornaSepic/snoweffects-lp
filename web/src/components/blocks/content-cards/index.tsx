@@ -24,7 +24,8 @@ export type Props = {
       src: string
       alt: string
       width: number
-      height: number
+      height: number,
+      objectPosition?: 'center' | 'top' | 'bottom' | 'left' | 'right'
     }
   }>
   showSnowEffect?: boolean
@@ -104,6 +105,7 @@ export const ContentCards: FC<Props> = async ({
                   alt={card.image.alt}
                   width={card.image.width}
                   height={card.image.height}
+                  style={{ objectFit: 'cover', objectPosition: card.image.objectPosition ?? 'center' }}
                 />
               </div>
               <div className={style.ContentCards__card__content}>

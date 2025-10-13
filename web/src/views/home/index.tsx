@@ -201,7 +201,7 @@ export const Home: FC = () => {
           ]}
         />
         <FeaturedProducts
-          id={'products'}
+          id={'featured-products'}
           title={
             <>
               Pick a Bundle or Build <br />
@@ -378,6 +378,46 @@ export const Home: FC = () => {
               priceBadge: null,
               badge: null,
               features: []
+            },
+            {
+              id: 'snow-effects-craft',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: "Snow Effects Craft",
+              url: 'https://www.snoweffects.com/store/Snow-Effects-Craft-p786891176',
+              image: {
+                src: '/images/products/snow-effects-craft.png',
+                alt: "Snow Effects Craft",
+                width: 300,
+                height: 300
+              },
+              description:
+                'Perfect for holiday villages, table centerpieces, or craft projects.',
+              compareAtPrice: null,
+              price: '$15',
+              priceBadge: null,
+              badge: null,
+              features: []
+            },
+            {
+              id: 'sparkle-effect',
+              categories: ['Products'],
+              ctaLabel: 'SHOP PRODUCT',
+              title: "Sparkle Effect",
+              url: 'https://www.snoweffects.com/store/Sparkle-Effect-p786891176',
+              image: {
+                src: '/images/products/sparkle-effect.png',
+                alt: "Sparkle Effect",
+                width: 300,
+                height: 300
+              },
+              description:
+                'Xx',
+              compareAtPrice: null,
+              price: '$XX',
+              priceBadge: null,
+              badge: null,
+              features: []
             }
           ]}
         />
@@ -524,8 +564,9 @@ export const Home: FC = () => {
               image: {
                 src: '/images/north-pole-setup.png',
                 alt: 'North Pole Setup',
-                width: 400,
-                height: 300
+                width: 1400,
+                height: 300,
+                objectPosition: 'right'
               },
               ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Indoor-Mini-Snow-Scene-Kit-p786894999',
               ctaLabel: 'View Kit'

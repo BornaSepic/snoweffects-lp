@@ -85,11 +85,15 @@
 
       li {
         display: flex;
-        flex-flow: column;
         gap: styleguide.spacing-get('xxxsmall');
         background: rgba(0, 0, 0, 0.1019607843);
         padding: styleguide.spacing-get('medium');
         border-bottom: 1px solid styleguide.color-get('white');
+
+        svg {
+          position: relative;
+          top: 2px;
+        }
 
         &:first-child {
           border-top-left-radius: 8px;
@@ -113,7 +117,7 @@
           align-items: center;
           font-weight: 700;
           gap: styleguide.spacing-get('xxsmall');
-          margin: 0;
+          margin: 0 0 styleguide.spacing-get('xxxsmall') 0;
 
           @include styleguide.mq-min('desktop-min') {
             font-size: styleguide.font-size('medium');

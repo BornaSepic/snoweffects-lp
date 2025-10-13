@@ -16,7 +16,7 @@
   }
 
   @include styleguide.mq-min('desktop-min') {
-    max-height: 80vh;
+    height: 80vh;
     padding: styleguide.spacing-get('xxlarge');
   }
 

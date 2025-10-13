@@ -1,10 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, type FC } from 'react'
+import { useEffect, useMemo, useRef, type FC } from 'react'
 import Image from 'next/image'
-import { Autoplay } from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Swiper as SwiperType } from 'swiper/types'
 import 'swiper/css'
 import style from './style.module.scss'
 import { gsap } from '../../../core/animation/gsap'
@@ -49,6 +46,18 @@ export const LogoCarousel: FC = () => {
         alt: 'NY Logo',
         width: 60,
         height: 80
+      },
+      {
+        src: '/images/pyeong-chang-2018.png',
+        alt: 'Pyeong Chang 2018 Logo',
+        width: 209,
+        height: 81
+      },
+      {
+        src: '/images/the-north-face.png',
+        alt: 'The North Face Logo',
+        width: 137,
+        height: 63
       }
     ]
   }
@@ -129,7 +138,8 @@ export const LogoCarousel: FC = () => {
                         width={logo.width || 150}
                         height={logo.height || 75}
                         style={{
-                          objectFit: 'cover'
+                          objectFit: 'cover',
+                          objectPosition: 'bottom'
                         }}
                       />
                     </div>

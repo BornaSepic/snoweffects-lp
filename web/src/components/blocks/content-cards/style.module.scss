@@ -99,9 +99,24 @@
 
         &__item {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: styleguide.spacing-get('xxsmall');
-          font-size: styleguide.font-size('medium');
+          font-size: styleguide.font-size('regular');
+
+          @include styleguide.mq-min('desktop-max') {
+            br {
+              display: none;
+            }
+          }
+
+          @include styleguide.mq-min('desktop-min') {
+            font-size: styleguide.font-size('medium');
+          }
+
+          svg {
+            position: relative;
+            top: 4px;
+          }
         }
       }
     }

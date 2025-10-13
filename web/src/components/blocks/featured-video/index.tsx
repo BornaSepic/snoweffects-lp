@@ -26,10 +26,7 @@ export const FeaturedVideo: FC<Props> = async ({
   return (
     <section className={style.FeaturedVideo__wrapper}>
       <div className={style.FeaturedVideo}>
-        <FeaturedVideoPlayer
-          mobileVideo={mobileVideo}
-          video={video}
-        />
+        <FeaturedVideoPlayer mobileVideo={mobileVideo} video={video} />
         <SnowEffect color={'white'} />
         <div className={style.FeaturedVideo__header}>
           <h1>{subtitle}</h1>
@@ -41,11 +38,13 @@ export const FeaturedVideo: FC<Props> = async ({
           {valueProps.map((valueProp) => {
             return (
               <li key={valueProp.title}>
-                <h3>
-                  <SnowflakeIcon color={'brown'} />{' '}
-                  <span>{valueProp.title}</span>
-                </h3>
-                <p>{valueProp.description}</p>
+                <SnowflakeIcon color={'brown'} />{' '}
+                <div>
+                  <h3>
+                    <span>{valueProp.title}</span>
+                  </h3>
+                  <p>{valueProp.description}</p>
+                </div>
               </li>
             )
           })}

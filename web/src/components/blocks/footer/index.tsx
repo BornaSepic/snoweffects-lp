@@ -8,8 +8,8 @@ export const Footer: FC = async () => {
       {
         title: 'Shop',
         links: [
-          { title: 'Pick a Bundle', href: '/' },
-          { title: 'Build Your Own Kit', href: '/' }
+          { title: 'Pick a Bundle', href: '#kits' },
+          { title: 'Build Your Own Kit', href: '#products' }
         ]
       },
       {

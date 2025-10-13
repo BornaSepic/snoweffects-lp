@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, type FC } from 'react'
+import React, { useEffect, useRef, useState, type FC } from 'react'
 import { Scrollbar } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Swiper as SwiperType } from 'swiper/types'
@@ -49,6 +49,9 @@ export const FeaturedProducts: FC<Props> = ({
   )
   const swiperRef = useRef<SwiperType | null>(null)
 
+  const [hasNextSlide, setHasNextSlide] = useState(true)
+  const [hasPrevSlide, setHasPrevSlide] = useState(false)
+
   const uniqueCategories = products.reduce((acc: string[], product) => {
     product.categories.forEach((category) => {
       if (!acc.includes(category)) {
@@ -61,8 +64,33 @@ export const FeaturedProducts: FC<Props> = ({
   const selectedOrDefaultCategory =
     selectedCategory ?? uniqueCategories[0] ?? ''
 
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.slideTo(0)
+      setHasNextSlide(!swiperRef.current.isEnd)
+      setHasPrevSlide(!swiperRef.current.isBeginning)
+    }
+  }, [selectedCategory])
+
+  useEffect(() => {
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '')
+      console.log(uniqueCategories.map(cat => cat.toLowerCase()), hash)
+      const category = uniqueCategories.find(cat => cat.toLowerCase().includes(hash))
+      if (category) {
+        setSelectedCategory(category)
+      }
+    })
+
+    return () => {
+      window.removeEventListener('hashchange', () => {})
+    }
+  }, [])
+
   return (
     <section className={style.FeaturedProducts__wrapper}>
+      <div id="products"></div>
+      <div id="kits"></div>
       <div className={style.FeaturedProducts} id={id}>
         <div className={style.FeaturedProducts__header}>
           <div className={style.FeaturedProducts__header__content}>
@@ -96,6 +124,12 @@ export const FeaturedProducts: FC<Props> = ({
             modules={[Scrollbar]}
             onSwiper={(swiper) => {
               swiperRef.current = swiper
+              setHasNextSlide(!swiper.isEnd)
+              setHasPrevSlide(!swiper.isBeginning)
+            }}
+            onSlideChange={(swiper) => {
+              setHasNextSlide(!swiper.isEnd)
+              setHasPrevSlide(!swiper.isBeginning)
             }}
             scrollbar={{
               el: `#${id} .${style.FeaturedProducts__controls__scrollbar}`,
@@ -184,7 +218,7 @@ export const FeaturedProducts: FC<Props> = ({
                               </span>
                             )}
                           </div>
-                          {product.description && <p>{product.description}</p>}
+                          {product.description && <p className={style.FeaturedProducts__product__description}>{product.description}</p>}
                         </div>
                         {product.features.length > 0 && (
                           <ul
@@ -212,7 +246,14 @@ export const FeaturedProducts: FC<Props> = ({
             })}
           </Swiper>
         </div>
-        <div className={clsx(style.FeaturedProducts__controls)}>
+        <div
+          className={clsx(
+            style.FeaturedProducts__controls,
+            !hasNextSlide &&
+              !hasPrevSlide &&
+              style['FeaturedProducts__controls--disabled']
+          )}
+        >
           <div className={style.FeaturedProducts__controls__scrollbar__wrapper}>
             <div className={style.FeaturedProducts__controls__scrollbar}></div>
           </div>
