@@ -75,7 +75,6 @@ export const FeaturedProducts: FC<Props> = ({
   useEffect(() => {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.replace('#', '')
-      console.log(uniqueCategories.map(cat => cat.toLowerCase()), hash)
       const category = uniqueCategories.find(cat => cat.toLowerCase().includes(hash))
       if (category) {
         setSelectedCategory(category)
@@ -85,7 +84,7 @@ export const FeaturedProducts: FC<Props> = ({
     return () => {
       window.removeEventListener('hashchange', () => {})
     }
-  }, [])
+  }, [uniqueCategories])
 
   return (
     <section className={style.FeaturedProducts__wrapper}>
