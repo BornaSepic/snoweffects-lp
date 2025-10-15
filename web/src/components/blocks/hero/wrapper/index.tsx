@@ -25,7 +25,7 @@ export const HeroWrapper: FC<Props> = ({ children }) => {
         scrollTop + window.innerHeight > offsetTop &&
         scrollTop < offsetTop + height
       ) {
-        const yPos = (scrollTop - offsetTop) * 0.5 // Adjust the multiplier to control the speed
+        const yPos = (scrollTop - offsetTop)
         gsap.to(
           sectionRef.current,
           {
