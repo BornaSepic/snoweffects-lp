@@ -20,12 +20,12 @@ export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
 
   return (
     <>
-      <button
+      {/* <button
         onClick={() => setIsPlaying(!isPlaying)}
         className={style.FeaturedVideo__controls}
       >
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
-      </button>
+      </button> */}
       <div className={style.FeaturedVideo__background}>
         <div className={style.FeaturedVideo__background__desktop}>
           <VideoPlayer

@@ -4,22 +4,26 @@
 @use 'mixins' as mixins;
 
 .Hero {
-  position: sticky;
-  z-index: 0;
-  top: 0;
-
   overflow: hidden;
   padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') styleguide.spacing-get('xxlarge') styleguide.spacing-get('regular');
 
-  @include styleguide.mq-max('desktop-min') {
-    aspect-ratio: 0.66;
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    @include styleguide.mq-max('desktop-min') {
+      aspect-ratio: none;
+      height: 85vh;
+    }
+
+    @include styleguide.mq-min('desktop-min') {
+      height: 80vh;
+      padding: styleguide.spacing-get('xxlarge');
+    }
   }
 
-  @include styleguide.mq-min('desktop-min') {
-    height: 80vh;
-    padding: styleguide.spacing-get('xxlarge');
-  }
-
+  height: 100%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -96,6 +100,10 @@
 
       @include styleguide.mq-min('desktop-min') {
         margin: styleguide.spacing-get('medium') 0 0;
+        font-size: styleguide.font-size('xxlarge');
+      }
+
+      @include styleguide.mq-min('desktop-medium') {
         font-size: styleguide.font-size('xxxlarge');
       }
     }
@@ -149,7 +157,7 @@
     &__desktop {
       display: none;
       visibility: hidden;
-      position: sticky;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -165,7 +173,7 @@
     &__mobile {
       display: block;
       visibility: visible;
-      position: sticky;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;

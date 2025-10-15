@@ -70,6 +70,7 @@ button {
 }
 
 section {
+  z-index: 1;
   position: relative;
   background-color: styleguide.color-get('white');
 }

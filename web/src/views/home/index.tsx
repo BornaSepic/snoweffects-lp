@@ -37,11 +37,11 @@ export const Home: FC = () => {
             href: 'tel:4404687669'
           }}
           ctas={[
-            { label: 'Shop Snow Kits', href: '#products' },
+            { label: 'Shop Snow Kits', href: '#kits' },
             {
               label: 'See Real Setups',
               desktopLabel: 'See Real Customer Setups',
-              href: '#reviews'
+              href: '#real-projects'
             }
           ]}
           desktopImage={{
@@ -244,9 +244,9 @@ export const Home: FC = () => {
                 height: 300
               },
               description: '',
-              compareAtPrice: null,
+              compareAtPrice: '$157',
               price: '$126',
-              priceBadge: null,
+              priceBadge: 'SAVE 20%',
               badge: 'UP TO 75 SQ FT',
               features: [
                 '1 SnowScape bag',
@@ -267,9 +267,9 @@ export const Home: FC = () => {
                 height: 300
               },
               description: '',
-              compareAtPrice: null,
+              compareAtPrice: '$439',
               price: '$351',
-              priceBadge: null,
+              priceBadge: 'SAVE 20%',
               badge: 'UP TO 225 SQ FT',
               features: [
                 '3 SnowScape bags',
@@ -552,6 +552,7 @@ export const Home: FC = () => {
           ]}
         />
         <ContentCards
+          id={'real-projects'}
           showSnowEffect={true}
           title={
             <>

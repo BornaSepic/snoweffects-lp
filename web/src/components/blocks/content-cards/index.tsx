@@ -7,6 +7,7 @@ import clsx from 'clsx'
 import { SnowEffect } from '../../elements/snow-effect'
 
 export type Props = {
+  id?: string
   title: React.ReactNode
   subtitle?: React.ReactNode
   description: string
@@ -32,6 +33,7 @@ export type Props = {
 }
 
 export const ContentCards: FC<Props> = async ({
+  id,
   title,
   subtitle,
   description,
@@ -43,7 +45,7 @@ export const ContentCards: FC<Props> = async ({
   showSnowEffect = false
 }) => {
   return (
-    <section className={style.ContentCards__wrapper}>
+    <section id={id} className={style.ContentCards__wrapper}>
       {showSnowEffect ? <SnowEffect color={'black'} /> : null}
       <div className={style.ContentCards}>
         <div

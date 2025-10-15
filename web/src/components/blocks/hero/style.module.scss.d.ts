@@ -11,7 +11,8 @@ export type Styles = {
   "Hero__content__ctas": "Hero__content__ctas",
   "Hero__header": "Hero__header",
   "Hero__header__cta__desktop": "Hero__header__cta__desktop",
-  "Hero__header__cta__mobile": "Hero__header__cta__mobile"
+  "Hero__header__cta__mobile": "Hero__header__cta__mobile",
+  "Hero__wrapper": "Hero__wrapper"
 }
 
 export type ClassNames = keyof Styles

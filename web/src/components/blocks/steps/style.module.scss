@@ -129,6 +129,11 @@
         max-width: calc(50% + styleguide.spacing-get('xlarge'));
       }
 
+      :global(.swiper) {
+        width: 100%;
+        height: 100%;
+      }
+
       &__slide {
         position: relative;
         aspect-ratio: 1;
