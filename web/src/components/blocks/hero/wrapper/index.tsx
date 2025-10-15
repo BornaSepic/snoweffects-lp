@@ -11,36 +11,28 @@ export type Props = {
 export const HeroWrapper: FC<Props> = ({ children }) => {
   const sectionRef = useRef<HTMLElement | null>(null)
 
-  // Add parrallax effect to hero background on scroll
   useEffect(() => {
-    if (!sectionRef.current) return
-
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-      const scrollTop = window.scrollY
-      const offsetTop = sectionRef.current.offsetTop
-      const height = sectionRef.current.offsetHeight
-
-      if (
-        scrollTop + window.innerHeight > offsetTop &&
-        scrollTop < offsetTop + height
-      ) {
-        const yPos = (scrollTop - offsetTop) * 0.5
-        gsap.to(
-          sectionRef.current,
-          {
-            y: yPos,
-            duration: 0,
-            ease: 'none',
-            overwrite: 'auto'
-          }
-        )
-      }
+    if (!sectionRef.current) {
+      return
     }
 
-    window.addEventListener('scroll', handleScroll)
+    const timeline = gsap.timeline({
+      paused: true,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        pinSpacing: false
+      }
+    })
+
+    timeline.play()
+
     return () => {
-      window.removeEventListener('scroll', handleScroll)
+      timeline.kill()
     }
   }, [])
 
