@@ -492,14 +492,20 @@ export const Home: FC = () => {
             },
             {
               content:
-                'I was blown away by the quality of the snow. It made our holiday party unforgettable!',
-              author: 'John Doe',
+                `ABSOLUTELY WONDERFUL....If I could give them a KISS I would! What a wonderful addition to my holiday yard....A BIG HIT IN ARKANSAS where we don't get a lot of snow...my only regret....I didn't order more bags. At least 5-6 bags are needed to get that "heavy snow look" for a large yard! I AM SOLD ON SNOWSCAPE Artificial Snow...there is simply nothing like it!`,
+              author: 'George C.',
               note: 'Verified Buyer'
             },
             {
               content:
-                'Setting up the snow was a breeze, and it looked incredibly realistic. Highly recommend!',
-              author: 'Jane Smith',
+                'This product was AMAZING!!!!!! We needed to convert a large outdoor grass area to a Winter Wonderland and we bought 5 bags of Snow Drift... Even without a machine nor any experience we were able to convert a large front grass area to a COMPLETE winter wonderland with just manual application. It looked so amazing that people all thought it was real snow and the photographer had a blast taking pictures of the AMAZING snow detail on ground and on the bushes. We will for sure buy this product again!!!!! The only set back is that the shipping is VERY expensive!',
+              author: 'Aepi K.',
+              note: 'Verified Buyer'
+            },
+            {
+              content:
+                'Very happy with the product. We used it for a special Santa event scene-scaping. Much better than the old days with shredded foam...',
+              author: 'Rick P.',
               note: 'Verified Buyer'
             }
           ]}
