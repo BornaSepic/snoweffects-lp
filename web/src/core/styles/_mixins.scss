@@ -27,7 +27,7 @@
 
 @mixin headingFont {
   font-family: styleguide.font-family('heading');
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 @mixin bodyFont {

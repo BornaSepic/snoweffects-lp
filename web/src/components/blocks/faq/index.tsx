@@ -6,7 +6,7 @@ export type Props = {
   title: React.ReactNode
   questions: Array<{
     question: string
-    answer: string
+    answer: string | React.ReactNode
   }>
 }
 

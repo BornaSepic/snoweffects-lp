@@ -225,7 +225,7 @@ export const Home: FC = () => {
                 height: 300
               },
               description: '',
-              compareAtPrice: '$XX',
+              compareAtPrice: '$87',
               price: '$69',
               priceBadge: 'SAVE 20%',
               badge: 'UP TO 10 SQ FT',
@@ -290,7 +290,7 @@ export const Home: FC = () => {
                 height: 300
               },
               description: '',
-              compareAtPrice: '$XXXX',
+              compareAtPrice: '$1600',
               price: '$1275',
               priceBadge: 'SAVE 20%',
               badge: 'UP TO 225 SQ FT',
@@ -383,11 +383,11 @@ export const Home: FC = () => {
               id: 'snow-effects-craft',
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
-              title: "Snow Effects Craft",
+              title: 'Snow Effects Craft',
               url: 'https://www.snoweffects.com/store/Snow-Effects-Craft-p786891176',
               image: {
                 src: '/images/products/snow-effects-craft.png',
-                alt: "Snow Effects Craft",
+                alt: 'Snow Effects Craft',
                 width: 300,
                 height: 300
               },
@@ -403,18 +403,17 @@ export const Home: FC = () => {
               id: 'sparkle-effect',
               categories: ['Products'],
               ctaLabel: 'SHOP PRODUCT',
-              title: "Sparkle Effect",
+              title: 'Sparkle Effect',
               url: 'https://www.snoweffects.com/store/Sparkle-Effect-p786891176',
               image: {
                 src: '/images/products/sparkle-effect.png',
-                alt: "Sparkle Effect",
+                alt: 'Sparkle Effect',
                 width: 300,
                 height: 300
               },
-              description:
-                'Xx',
+              description: 'Crystalina additive for Artificial Snow. Enhances sparkle factor to any of our snow products.',
               compareAtPrice: null,
-              price: '$XX',
+              price: '$29',
               priceBadge: null,
               badge: null,
               features: []
@@ -568,7 +567,8 @@ export const Home: FC = () => {
                 height: 300,
                 objectPosition: 'right'
               },
-              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Indoor-Mini-Snow-Scene-Kit-p786894999',
+              ctaLink:
+                'https://www.snoweffects.com/store/Snow-Effects-tm-Indoor-Mini-Snow-Scene-Kit-p786894999',
               ctaLabel: 'View Kit'
             },
             {
@@ -590,7 +590,8 @@ export const Home: FC = () => {
                 width: 400,
                 height: 300
               },
-              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
+              ctaLink:
+                'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
               ctaLabel: 'View Kit'
             },
             {
@@ -601,7 +602,8 @@ export const Home: FC = () => {
                 width: 400,
                 height: 300
               },
-              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Entryway-Kit-interior-or-exterior-p786895176',
+              ctaLink:
+                'https://www.snoweffects.com/store/Snow-Effects-tm-Entryway-Kit-interior-or-exterior-p786895176',
               ctaLabel: 'View Kit'
             }
           ]}
@@ -616,27 +618,53 @@ export const Home: FC = () => {
             {
               question: 'Is it safe for kids and pets?',
               answer:
-                'Absolutely! Our snow products are non-toxic and safe for children and pets when used as directed.'
+                'It sure is! SnowScape and SnowHold are both made from recycled plant based materials. SnowHold has been lab tested to be “biodegradable”. Our SnowScape Pro product is 100% biodegradable. Pet and human safe to play in, but folks, it’s not meant for consumption.'
             },
             {
               question: 'How much do I need?',
               answer:
-                'One 22 lb bag of SnowScape covers ~75 sq ft at 1 inch thick.'
+                'SnowScape cover approximately 25-30 square feet at 3 inches deep. Best coverage is achieved by blowing in the material. SnowHold covers 4-5 eight foot evergreen trees. SnowHold provides great coverage, but it the amount depends on the build and surface to which you are applying. If applying to a flat surface, we recommend approximately one bag for every 75 square feet at ¼ inch thick.'
             },
             {
               question: 'Does it hold up in wind/rain?',
               answer:
-                'Yes! Our snow products are designed to withstand various weather conditions, including wind and rain.'
+                'Snowscape absorbs moisture and remains bright white in color. Heavy rains will matt the surface and cause it to be less fluffy. Once Snowscape dries back out in the sun, it become fluffy again.'
             },
             {
               question: 'How do I clean it up?',
               answer:
-                'Our snow products are easy to clean up. Simply sweep or vacuum the area, and any remaining residue can be washed away with water.'
+                'Since SnowScape is non-adhesive, it can simply be shoveled or vacuumed up with a vacuum cleaner, industrial vacuum, lawnmower, or leave blower with a bagging system. For reallhy easy cleanup, simply use our Ground Cloth with you apply SnowScape and the roll it up like a big burrito to discard. SnowHold can be simply washed off with a garden hose or a power pressure washer.'
             },
             {
               question: 'Can I use it on wood/tile/stage?',
               answer:
                 'Yes! Our snow products are safe for use on various surfaces, including wood, tile, and stages.'
+            },
+            {
+              question: 'Can I walk on SnowScape or SnowHold after I apply it?',
+              answer:
+                'Yes, SnowScape will act like real snow when you walk on it and leave impressions such as footprints when walked on. It simulates real snow, so it is great to interact with whether you are producing a movie or holding an event. SnowHold can be walked on once it is completely dry, but we do not recommend walking on it when it is wet or even slightly damp. SnowHold when not completely dry, will stick to just about anything including your shoes, but it can be removed with water. '
+            },
+            {
+              question:
+                'How do I apply SnowEffects snow? Do I need special equipment?',
+              answer: (
+                <>
+                  For smaller projects, SnowScape and SnowHold are both easy to
+                  apply—no special equipment required. Simply pour SnowScape
+                  right out of the bag and spread it with your hands, a rake, or
+                  a broom for a light, natural look. If you’re using SnowHold
+                  adhesive snow, just mix it with a fine water mist as you go;
+                  it will dry and stick beautifully once applied.
+                  <br />
+                  <br />
+                  For larger displays or full-yard transformations, you can
+                  speed things up with equipment. We recommend using an
+                  insulation blower for SnowScape or the SnowForce machine for
+                  SnowHold. Both connect to a regular 110v outlet (and a garden
+                  hose for SnowForce) to make application quick and even.
+                </>
+              )
             }
           ]}
         />
@@ -665,7 +693,10 @@ export const Home: FC = () => {
               )
             }
           ]}
-          cta={{ label: 'Contact our team', href: 'https://www.snoweffects.com/contact' }}
+          cta={{
+            label: 'Contact our team',
+            href: 'https://www.snoweffects.com/contact'
+          }}
           cards={[
             {
               title: 'ABC - The Bachelor "Show"',
