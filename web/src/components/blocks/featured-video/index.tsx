@@ -25,30 +25,32 @@ export const FeaturedVideo: FC<Props> = async ({
 }) => {
   return (
     <section className={style.FeaturedVideo__wrapper}>
-      <div className={style.FeaturedVideo}>
-        <FeaturedVideoPlayer mobileVideo={mobileVideo} video={video} />
-        <SnowEffect color={'white'} />
-        <div className={style.FeaturedVideo__header}>
-          <h1>{subtitle}</h1>
-          <h2>{title}</h2>
+      <div className={style.FeaturedVideo__content__wrapper}>
+        <div className={style.FeaturedVideo}>
+          <FeaturedVideoPlayer mobileVideo={mobileVideo} video={video} />
+          <SnowEffect color={'white'} />
+          <div className={style.FeaturedVideo__header}>
+            <h1>{subtitle}</h1>
+            <h2>{title}</h2>
+          </div>
         </div>
-      </div>
-      <div className={style.FeaturedVideo__content}>
-        <ul className={style.FeaturedVideo__content__valueProps}>
-          {valueProps.map((valueProp) => {
-            return (
-              <li key={valueProp.title}>
-                <SnowflakeIcon color={'brown'} />{' '}
-                <div>
-                  <h3>
-                    <span>{valueProp.title}</span>
-                  </h3>
-                  <p>{valueProp.description}</p>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+        <div className={style.FeaturedVideo__content}>
+          <ul className={style.FeaturedVideo__content__valueProps}>
+            {valueProps.map((valueProp) => {
+              return (
+                <li key={valueProp.title}>
+                  <SnowflakeIcon color={'brown'} />{' '}
+                  <div>
+                    <h3>
+                      <span>{valueProp.title}</span>
+                    </h3>
+                    <p>{valueProp.description}</p>
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   )

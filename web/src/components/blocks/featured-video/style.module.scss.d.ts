@@ -8,6 +8,7 @@ export type Styles = {
   "FeaturedVideo__background__video__container": "FeaturedVideo__background__video__container",
   "FeaturedVideo__content": "FeaturedVideo__content",
   "FeaturedVideo__content__valueProps": "FeaturedVideo__content__valueProps",
+  "FeaturedVideo__content__wrapper": "FeaturedVideo__content__wrapper",
   "FeaturedVideo__controls": "FeaturedVideo__controls",
   "FeaturedVideo__header": "FeaturedVideo__header",
   "FeaturedVideo__wrapper": "FeaturedVideo__wrapper"

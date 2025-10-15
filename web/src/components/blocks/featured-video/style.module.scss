@@ -69,6 +69,10 @@
       padding: styleguide.spacing-get('xxlarge');
     }
 
+    &__wrapper {
+      position: relative;
+    }
+
     &__valueProps {
       display: grid;
       padding: styleguide.spacing-get('regular') styleguide.spacing-get('regular') 0 styleguide.spacing-get('regular');
