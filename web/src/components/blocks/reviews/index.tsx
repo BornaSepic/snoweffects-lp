@@ -44,6 +44,7 @@ export const Reviews: FC<Props> = ({ id, reviews }) => {
           loop={true}
           spaceBetween={32}
           slidesPerView={1}
+          autoHeight={true}
         >
           {reviews.map((review, index) => (
             <SwiperSlide key={index}>

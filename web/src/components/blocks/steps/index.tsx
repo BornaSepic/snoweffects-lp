@@ -7,7 +7,6 @@ import 'swiper/css'
 import 'swiper/css/effect-fade'
 import style from './style.module.scss'
 import Image from 'next/image'
-import { VideoPlayer } from 'react-datocms'
 import clsx from 'clsx'
 import { EffectFade } from 'swiper/modules'
 import { StepsVideoPlayer } from './video'
@@ -32,7 +31,8 @@ export type Props = {
           src: string
           width: number
           height: number
-          alt: string
+          alt: string,
+          objectPosition?: string
         }
       | {
           __typename: 'Video'
@@ -148,6 +148,7 @@ export const Steps: FC<Props> = ({ id, title, steps, backgroundImage }) => {
                         width={step.asset.width}
                         height={step.asset.height}
                         alt={step.asset.alt}
+                        style={{ objectFit: 'cover', objectPosition: step.asset.objectPosition ?? 'center' }}
                       />
                     ) : (
                       <StepsVideoPlayer

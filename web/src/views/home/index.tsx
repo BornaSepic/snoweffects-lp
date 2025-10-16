@@ -438,10 +438,10 @@ export const Home: FC = () => {
                 'Choose from our pre-built kits or build your own using SnowScape, SnowHold, and SnowBlanket.',
               asset: {
                 __typename: 'Image',
-                src: '/images/step-1.png',
+                src: '/images/steps/step-1.png',
                 alt: 'Choose your products',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               }
             },
             {
@@ -456,8 +456,12 @@ export const Home: FC = () => {
               description:
                 'Sprinkle directly from the bag, fluff by hand, or layer for volume. Add SnowHold for outdoor displays.',
               asset: {
-                __typename: 'Video',
-                src: '/videos/house.mp4'
+                __typename: 'Image',
+                src: '/images/steps/step-2.png',
+                alt: 'Apply Anywhere',
+                width: 1024,
+                height: 1024,
+                objectPosition: '75%'
               }
             },
             {
@@ -473,10 +477,11 @@ export const Home: FC = () => {
                 'Sweep or vacuum and toss. No water, no residue, no stress.',
               asset: {
                 __typename: 'Image',
-                src: '/images/step-3.png',
-                alt: 'Choose your products',
-                width: 400,
-                height: 300
+                src: '/images/steps/step-3.png',
+                alt: 'Clean up Easily',
+                width: 1024,
+                height: 1024,
+                objectPosition: '100%'
               }
             }
           ]}
@@ -583,8 +588,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/snow-by-the-poolside.png',
                 alt: 'Snow by the Poolside',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               },
               ctaLink: '#',
               ctaLabel: 'View Kit'
@@ -594,8 +599,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/winter-wonderland-garden.jpg',
                 alt: 'Winter Wonderland Garden',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               },
               ctaLink:
                 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
@@ -606,8 +611,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/snow-kissed-entrance.jpg',
                 alt: 'Snow-Kissed Entrance',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               },
               ctaLink:
                 'https://www.snoweffects.com/store/Snow-Effects-tm-Entryway-Kit-interior-or-exterior-p786895176',
@@ -710,8 +715,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/batchelor-show-abc.png',
                 alt: 'The Batchelor Show on ABC',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               }
             },
             {
@@ -719,8 +724,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/nyc-fashion-show.png',
                 alt: 'New York City Fashion Show',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               }
             },
             {
@@ -728,8 +733,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/veuveclicquot-event.png',
                 alt: 'Veuve Cliquot Event in Deauville',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               }
             },
             {
@@ -737,8 +742,8 @@ export const Home: FC = () => {
               image: {
                 src: '/images/a-bag-of-marbles-film.png',
                 alt: 'A Bag of Marbles Film',
-                width: 400,
-                height: 300
+                width: 1024,
+                height: 1024
               }
             }
           ]}
