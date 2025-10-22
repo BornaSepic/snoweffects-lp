@@ -591,7 +591,7 @@ export const Home: FC = () => {
                 width: 1024,
                 height: 1024
               },
-              ctaLink: '#',
+              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
               ctaLabel: 'View Kit'
             },
             {
