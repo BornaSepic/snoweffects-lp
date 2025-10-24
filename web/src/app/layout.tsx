@@ -4,6 +4,7 @@ import { WEBSITE_DESCRIPTION, WEBSITE_NAME } from '../core/seo'
 import '../core/styles/main.scss'
 import Providers from './providers'
 import { DM_Sans, Playfair_Display } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 export const dm_sans = DM_Sans({
   subsets: ['latin'],
@@ -40,6 +41,9 @@ const RootLayout: FC<Props> = ({ children }) => {
       lang="en"
       className={`${dm_sans.variable} ${playfair_display.variable}`}
     >
+      <GoogleTagManager gtmId="GTM-M8LZ35PX" />
+      <GoogleTagManager gtmId="GTM-MJ2FWPV9" />
+
       <body>
         <Providers>{children}</Providers>
       </body>

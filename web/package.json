@@ -12,6 +12,7 @@
     "@graphql-codegen/typescript-generic-sdk": "4.0.1",
     "@graphql-codegen/typescript-operations": "4.6.0",
     "@next/bundle-analyzer": "15.3.0",
+    "@next/third-parties": "16.0.0",
     "@reactivex/ix-esnext-cjs": "7.0.0",
     "@splinetool/react-spline": "4.0.0",
     "@splinetool/runtime": "1.9.82",
@@ -101,9 +102,14 @@
     "node": "20.x",
     "pnpm": "9.x"
   },
-  "browserslist": ["defaults and supports es6-module and not dead"],
+  "browserslist": [
+    "defaults and supports es6-module and not dead"
+  ],
   "ava": {
-    "files": ["lib-test/**/*.spec.js", "devops/lib/**/*.spec.js"],
+    "files": [
+      "lib-test/**/*.spec.js",
+      "devops/lib/**/*.spec.js"
+    ],
     "verbose": true
   },
   "scripts": {
