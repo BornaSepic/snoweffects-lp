@@ -16,7 +16,6 @@ export type VideoContent = {
 
 export type Props = {
   containerClassName?: string
-  playVideo?: boolean
   rootMargin?: {
     top: number
     bottom: number
@@ -36,7 +35,6 @@ export const VideoPlayer: FC<Props> = ({
   containerClassName,
   rootMargin,
   unmountDelayInSeconds: _unmountDelay = 3,
-  playVideo = true,
   disablePerformanceMode = false,
   content,
   muted = true,
@@ -60,7 +58,7 @@ export const VideoPlayer: FC<Props> = ({
 
   // Pause and eventually unmount the video player when it leaves the viewport
   useEffect(() => {
-    if ((inView && playVideo) || disablePerformanceMode === true) {
+    if ((inView) || disablePerformanceMode === true) {
       setStatus(() => 'playing')
       return
     }
@@ -81,7 +79,7 @@ export const VideoPlayer: FC<Props> = ({
         clearTimeout(timeoutId)
       }
     }
-  }, [_unmountDelay, inView, playVideo, disablePerformanceMode])
+  }, [_unmountDelay, inView, disablePerformanceMode])
 
   useEffect(() => {
     if (videoEl == null) return
@@ -99,6 +97,8 @@ export const VideoPlayer: FC<Props> = ({
   }, [status, videoEl])
 
   const { width, height, url } = content
+
+  console.log(status)
 
   return (
     <div className={containerClassName} ref={observe}>

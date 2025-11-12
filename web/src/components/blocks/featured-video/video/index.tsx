@@ -5,6 +5,7 @@ import style from '../style.module.scss'
 import { VideoPlayer } from '../../../elements/video-player'
 import { PauseIcon } from '../../../icons/pause'
 import { PlayIcon } from '../../../icons/play'
+import { useMediaQuery } from '../../../../core/viewport/use-media-query'
 
 export type Props = {
   video: {
@@ -16,7 +17,7 @@ export type Props = {
 }
 
 export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const isDesktop = useMediaQuery('(min-width: 1180px)')
 
   return (
     <>
@@ -27,35 +28,37 @@ export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </button> */}
       <div className={style.FeaturedVideo__background}>
-        <div className={style.FeaturedVideo__background__desktop}>
-          <VideoPlayer
-            containerClassName={
-              style.FeaturedVideo__background__video__container
-            }
-            content={{
-              url: video.src,
-              height: 720,
-              width: 1280,
-              thumbnailUrl: ''
-            }}
-            playVideo={isPlaying}
-          />
-        </div>
+        {isDesktop && (
+          <div className={style.FeaturedVideo__background__desktop}>
+            <VideoPlayer
+              containerClassName={
+                style.FeaturedVideo__background__video__container
+              }
+              content={{
+                url: video.src,
+                height: 720,
+                width: 1280,
+                thumbnailUrl: ''
+              }}
+            />
+          </div>
+        )}
 
-        <div className={style.FeaturedVideo__background__mobile}>
-          <VideoPlayer
-            containerClassName={
-              style.FeaturedVideo__background__video__container
-            }
-            content={{
-              url: mobileVideo.src,
-              height: 720,
-              width: 1280,
-              thumbnailUrl: ''
-            }}
-            playVideo={isPlaying}
-          />
-        </div>
+        {isDesktop === false && (
+          <div className={style.FeaturedVideo__background__mobile}>
+            <VideoPlayer
+              containerClassName={
+                style.FeaturedVideo__background__video__container
+              }
+              content={{
+                url: mobileVideo.src,
+                height: 720,
+                width: 1280,
+                thumbnailUrl: ''
+              }}
+            />
+          </div>
+        )}
       </div>
     </>
   )
