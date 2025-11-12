@@ -5,6 +5,7 @@ import style from '../../style.module.scss'
 import { MinusIcon } from '../../../../icons/minus'
 import { PlusIcon } from '../../../../icons/plus'
 import { FAQAnswer } from '../answer'
+import clsx from 'clsx'
 
 export type Props = {
   questions: Array<{
@@ -23,7 +24,10 @@ export const FAQQuestions: FC<Props> = ({ questions }) => {
         <div className={style.FAQ__content__item} key={`faq-question-${index}`}>
           <button
             aria-expanded={expandedIndex === index ? 'true' : 'false'}
-            className={style.FAQ__question}
+            className={clsx(
+              style.FAQ__question,
+              'btn-faq-question',
+            )}
             onClick={() =>
               setExpandedIndex(expandedIndex === index ? null : index)
             }

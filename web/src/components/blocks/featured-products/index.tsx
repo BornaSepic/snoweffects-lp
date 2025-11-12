@@ -75,7 +75,9 @@ export const FeaturedProducts: FC<Props> = ({
   useEffect(() => {
     window.addEventListener('hashchange', () => {
       const hash = window.location.hash.replace('#', '')
-      const category = uniqueCategories.find(cat => cat.toLowerCase().includes(hash))
+      const category = uniqueCategories.find((cat) =>
+        cat.toLowerCase().includes(hash)
+      )
       if (category) {
         setSelectedCategory(category)
       }
@@ -156,9 +158,10 @@ export const FeaturedProducts: FC<Props> = ({
                   <article className={style.FeaturedProducts__product}>
                     <a
                       href={product.url}
-                      className={
+                      className={clsx(
+                        `btn-featured-products-${product.categories.join('-').toLowerCase()} `,
                         style.FeaturedProducts__product__image__container
-                      }
+                      )}
                     >
                       <Image
                         src={product.image.src}
@@ -217,7 +220,15 @@ export const FeaturedProducts: FC<Props> = ({
                               </span>
                             )}
                           </div>
-                          {product.description && <p className={style.FeaturedProducts__product__description}>{product.description}</p>}
+                          {product.description && (
+                            <p
+                              className={
+                                style.FeaturedProducts__product__description
+                              }
+                            >
+                              {product.description}
+                            </p>
+                          )}
                         </div>
                         {product.features.length > 0 && (
                           <ul
@@ -236,7 +247,14 @@ export const FeaturedProducts: FC<Props> = ({
                         )}
                       </div>
                       <div className={style.FeaturedProducts__product__cta}>
-                        <Cta link={product.url} label={product.ctaLabel} />
+                        <Cta
+                          link={product.url}
+                          label={product.ctaLabel}
+                          className={`btn-featured-products-${product.categories
+                            .map((category) => category.split(' ').join('-'))
+                            .join('-')
+                            .toLowerCase()}`}
+                        />
                       </div>
                     </div>
                   </article>

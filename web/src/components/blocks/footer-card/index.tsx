@@ -14,7 +14,8 @@ export const FooterCard: FC = async () => {
       'NO COLD. NO MESS. JUST MAGICAL, REALISTIC SNOW—DELIVERED TO YOUR DOOR.',
     cta: {
       label: 'Build Your Snow Scene',
-      href: '#products'
+      href: '#products',
+      id: 'btn-build-your-snow-scene'
     }
   }
 
@@ -37,7 +38,7 @@ export const FooterCard: FC = async () => {
             </p>
           </div>
           <div className={style.FooterCard__content__cta}>
-            <Cta label={DATA.cta.label} link={DATA.cta.href} />
+            <Cta id={DATA.cta.id} label={DATA.cta.label} link={DATA.cta.href} />
           </div>
         </div>
       </div>

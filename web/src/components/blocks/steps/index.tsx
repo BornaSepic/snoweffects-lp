@@ -107,7 +107,9 @@ export const Steps: FC<Props> = ({ id, title, steps, backgroundImage }) => {
                 return (
                   <button
                     key={index}
+                    id={`btn-steps-nav-${step.id}`}
                     className={clsx(
+                      'btn-steps-nav',
                       style.Steps__nav__button,
                       index === activeIndex && style.Steps__nav__button__active
                     )}

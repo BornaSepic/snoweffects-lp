@@ -37,11 +37,16 @@ export const Home: FC = () => {
             href: 'tel:4404687669'
           }}
           ctas={[
-            { label: 'Shop Snow Kits', href: '#kits' },
+            {
+              label: 'Shop Snow Kits',
+              href: '#kits',
+              id: 'btn-shop-snow-kits'
+            },
             {
               label: 'See Real Setups',
               desktopLabel: 'See Real Customer Setups',
-              href: '#real-projects'
+              href: '#real-projects',
+              id: 'btn-see-real-setups'
             }
           ]}
           desktopImage={{
@@ -411,7 +416,8 @@ export const Home: FC = () => {
                 width: 300,
                 height: 300
               },
-              description: 'Crystalina additive for Artificial Snow. Enhances sparkle factor to any of our snow products.',
+              description:
+                'Crystalina additive for Artificial Snow. Enhances sparkle factor to any of our snow products.',
               compareAtPrice: null,
               price: '$29',
               priceBadge: null,
@@ -496,8 +502,7 @@ export const Home: FC = () => {
               note: 'Verified Buyer'
             },
             {
-              content:
-                `ABSOLUTELY WONDERFUL....If I could give them a KISS I would! What a wonderful addition to my holiday yard....A BIG HIT IN ARKANSAS where we don't get a lot of snow...my only regret....I didn't order more bags. At least 5-6 bags are needed to get that "heavy snow look" for a large yard! I AM SOLD ON SNOWSCAPE Artificial Snow...there is simply nothing like it!`,
+              content: `ABSOLUTELY WONDERFUL....If I could give them a KISS I would! What a wonderful addition to my holiday yard....A BIG HIT IN ARKANSAS where we don't get a lot of snow...my only regret....I didn't order more bags. At least 5-6 bags are needed to get that "heavy snow look" for a large yard! I AM SOLD ON SNOWSCAPE Artificial Snow...there is simply nothing like it!`,
               author: 'George C.',
               note: 'Verified Buyer'
             },
@@ -591,7 +596,8 @@ export const Home: FC = () => {
                 width: 1024,
                 height: 1024
               },
-              ctaLink: 'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
+              ctaLink:
+                'https://www.snoweffects.com/store/Snow-Effects-tm-Large-Outdoor-Display-Kit-p786953508',
               ctaLabel: 'View Kit'
             },
             {
@@ -707,7 +713,8 @@ export const Home: FC = () => {
           ]}
           cta={{
             label: 'Contact our team',
-            href: 'https://www.snoweffects.com/contact'
+            href: 'https://www.snoweffects.com/contact',
+            id: 'btn-contact-our-team'
           }}
           cards={[
             {

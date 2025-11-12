@@ -6,6 +6,7 @@ import { Cta } from '../../elements/cta'
 import Image from 'next/image'
 import { SnowEffect } from '../../elements/snow-effect'
 import { HeroWrapper } from './wrapper'
+import clsx from 'clsx'
 
 export type Props = {
   title: React.ReactNode
@@ -15,7 +16,12 @@ export type Props = {
     desktopLabel: React.ReactNode | string
     href: string
   }
-  ctas: Array<{ label: string; desktopLabel?: string; href: string }>
+  ctas: Array<{
+    label: string
+    desktopLabel?: string
+    href: string
+    id?: string
+  }>
   desktopImage: {
     src: string
     alt: string
@@ -69,12 +75,18 @@ export const Hero: FC<Props> = ({
             <HeaderLogo />
           </a>
           <div>
-            <a className={style.Hero__header__cta__mobile} href={phoneCta.href}>
+            <a
+              className={clsx(style.Hero__header__cta__mobile, 'btn-call-us')}
+              href={phoneCta.href}
+            >
               <Phone />
               <span>{phoneCta.label}</span>
             </a>
             <a
-              className={style.Hero__header__cta__desktop}
+              className={clsx(
+                style.Hero__header__cta__desktop,
+                'btn-call-us-desktop'
+              )}
               href={phoneCta.href}
             >
               <span>{phoneCta.desktopLabel}</span>
@@ -93,6 +105,7 @@ export const Hero: FC<Props> = ({
               const desktopLabel = cta.desktopLabel ?? cta.label
               return (
                 <Cta
+                  id={cta.id}
                   key={cta.href + cta.label}
                   link={cta.href}
                   mode={'primary'}

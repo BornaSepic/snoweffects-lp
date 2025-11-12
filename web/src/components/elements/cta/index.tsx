@@ -5,10 +5,12 @@ export type Props = {
   label: string | React.ReactNode
   link?: string
   onClick?: () => void
+  className?: string
   mode?: 'primary' | 'secondary'
+  id?: string
 }
 
-export const Cta = ({ label, link, onClick, mode = 'primary' }: Props) => {
+export const Cta = ({ label, link, onClick, mode = 'primary', className, id }: Props) => {
   const directionalLabelHelpers = (
     <>
       <span data-index="1" className={style.Cta__hoverHelper} />
@@ -53,7 +55,7 @@ export const Cta = ({ label, link, onClick, mode = 'primary' }: Props) => {
 
   if (link) {
     return (
-      <a href={link} className={clsx(style.Cta, style[`Cta--${mode}`])}>
+      <a id={id} href={link} className={clsx(style.Cta, style[`Cta--${mode}`], className)}>
         {directionalLabelHelpers}
         {label}
         {directionalLabelContent}
@@ -63,8 +65,9 @@ export const Cta = ({ label, link, onClick, mode = 'primary' }: Props) => {
 
   return (
     <button
+      id={id}
       type="button"
-      className={clsx(style.Cta, style[`Cta--${mode}`])}
+      className={clsx(style.Cta, style[`Cta--${mode}`], className)}
       onClick={onClick}
     >
       {directionalLabelHelpers}

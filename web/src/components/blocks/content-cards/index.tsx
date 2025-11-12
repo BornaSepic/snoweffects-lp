@@ -5,6 +5,7 @@ import { Cta } from '../../elements/cta'
 import { SnowflakeIcon } from '../../icons/snowflake'
 import clsx from 'clsx'
 import { SnowEffect } from '../../elements/snow-effect'
+import { handleise } from '../../../core/string/handelise'
 
 export type Props = {
   id?: string
@@ -12,7 +13,7 @@ export type Props = {
   subtitle?: React.ReactNode
   description: string
   contentAligment?: 'left' | 'center' | 'right'
-  cta?: { label: string; href: string }
+  cta?: { label: string; href: string, id?: string }
   contentTitle?: string
   contentItems?: Array<{
     label: string | React.ReactNode
@@ -93,7 +94,7 @@ export const ContentCards: FC<Props> = async ({
                 ) : null}
               </div>
               {cta && (
-                <Cta link={cta.href} mode={'primary'} label={cta.label} />
+                <Cta id={cta.id} link={cta.href} mode={'primary'} label={cta.label} />
               )}
             </div>
           ) : null}
@@ -116,6 +117,8 @@ export const ContentCards: FC<Props> = async ({
                 </h4>
                 {card.ctaLabel && card.ctaLink ? (
                   <Cta
+                    id={handleise(card.title)}
+                    className={'btm-view-kit-content-cards'}
                     link={card.ctaLink}
                     mode={'primary'}
                     label={card.ctaLabel}
