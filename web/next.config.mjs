@@ -22,7 +22,7 @@ const nextConfig = {
       360, 480, 560, 640, 768, 860, 940, 1024, 1280, 1366, 1440, 1600, 1920,
       2560, 3840
     ],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 60 * 60 * 24,
     formats: ['image/webp', 'image/avif']
   },
   i18n: {
