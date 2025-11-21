@@ -17,8 +17,6 @@ export type Props = {
 }
 
 export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
-  const isDesktop = useMediaQuery('(min-width: 1180px)')
-
   return (
     <>
       {/* <button
@@ -28,7 +26,6 @@ export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
         {isPlaying ? <PauseIcon /> : <PlayIcon />}
       </button> */}
       <div className={style.FeaturedVideo__background}>
-        {isDesktop && (
           <div className={style.FeaturedVideo__background__desktop}>
             <VideoPlayer
               containerClassName={
@@ -42,23 +39,6 @@ export const FeaturedVideoPlayer: FC<Props> = ({ video, mobileVideo }) => {
               }}
             />
           </div>
-        )}
-
-        {isDesktop === false && (
-          <div className={style.FeaturedVideo__background__mobile}>
-            <VideoPlayer
-              containerClassName={
-                style.FeaturedVideo__background__video__container
-              }
-              content={{
-                url: mobileVideo.src,
-                height: 720,
-                width: 1280,
-                thumbnailUrl: ''
-              }}
-            />
-          </div>
-        )}
       </div>
     </>
   )

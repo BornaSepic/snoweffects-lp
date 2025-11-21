@@ -204,19 +204,14 @@
     }
 
     &__desktop {
-      display: none;
-      visibility: hidden;
+      display: block;
+      visibility: visible;
       position: sticky;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: 1;
-
-      @include styleguide.mq-min('desktop-min') {
-        display: block;
-        visibility: visible;
-      }
     }
 
     &__mobile {

@@ -63,7 +63,7 @@ export const VideoPlayer: FC<Props> = ({
       return
     }
 
-    setStatus(() => 'paused')
+    //setStatus(() => 'paused')
 
     if (!inView) {
       const unmountDelay: number =
@@ -72,7 +72,7 @@ export const VideoPlayer: FC<Props> = ({
           : 3
 
       const timeoutId = setTimeout(() => {
-        setStatus(() => 'unmounted')
+        setStatus(() => 'paused')
       }, unmountDelay * SECOND)
 
       return () => {
@@ -90,6 +90,7 @@ export const VideoPlayer: FC<Props> = ({
       })
     } else if (status === 'paused') {
       videoEl.pause()
+      videoEl.currentTime = 0
     } else if (status === 'unmounted') {
       videoEl.pause()
       videoEl.currentTime = 0
